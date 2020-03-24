@@ -1,0 +1,39 @@
+.nav-welcome {
+  height: 100%;
+  width: 100%;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px dotted map-get($colors, nav);
+  text-align: center;
+  background-color: map-get($colors, screen);
+  color: map-get($colors, header);
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  p {
+    font-size: 1.4rem;
+    margin: 1.7rem;
+
+    &.text-second {
+      font-size: 1.2rem;
+    }
+  }
+
+  input {
+    display: block;
+    padding: 0.3rem 5rem 0.3rem 0.3rem;
+  }
+
+  & input[type=submit] {
+    margin: 1rem auto;
+    padding: 0.3rem 1rem;
+    border: none;
+    color: #fff;
+    background-color: map-get($colors, button);
+    font-weight: 600;
+  }
+}

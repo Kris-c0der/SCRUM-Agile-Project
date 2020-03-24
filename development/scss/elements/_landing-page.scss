@@ -1,4 +1,5 @@
 .content-box {
+
     max-width: 1352px;
     margin: 0 auto;
 }
@@ -34,3 +35,47 @@
     padding: 15px 35px;
     margin-left: 100px;
 }
+=======
+  max-width: 1352px;
+  margin: 0 auto;
+}
+
+.landing-page-header-background-container {
+  background: #5b605f;
+}
+
+.landing-page-header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 35px 90px;
+  h1 {
+    font-family: $logo-font;
+    font-size: 3rem;
+    #first {
+      font-weight: 100;
+      color: white;
+    }
+    #second {
+      color: map-get($map: $colors, $key: logo);
+      font-weight: 700;
+    }
+  }
+  .landing-page-nav {
+    text-transform: uppercase;
+    font-family: $main-font;
+    font-size: 1rem;
+    color: #fff;
+    .landing-page-menu-list {
+      display: flex;
+      li {
+        padding-left: 40px;
+      }
+      #menu-list-accent {
+        color: map-get($map: $colors, $key: logo);
+      }
+    }
+  }
+}
+
+/*--end-nav--*/
