@@ -1,6 +1,4 @@
 .nav-welcome {
-  height: 100%;
-  width: 100%;
   padding: 3rem;
   display: flex;
   flex-direction: column;
@@ -9,9 +7,10 @@
   text-align: center;
   background-color: map-get($colors, screen);
   color: map-get($colors, header);
+  width: 100%;
 
   h1 {
-    font-size: 2rem;
+    font-size: 3rem;
   }
 
   p {
@@ -30,7 +29,8 @@
 
   & input[type=submit] {
     margin: 1rem auto;
-    padding: 0.3rem 1rem;
+    padding: 1rem 2rem;
+    font-size: 1.3rem;
     border: none;
     color: #fff;
     background-color: map-get($colors, button);

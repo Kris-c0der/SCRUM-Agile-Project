@@ -1,8 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Charmonman');
-@import "development/scss/font-awesome/fontawesome";
-@import "development/scss/font-awesome/icons";
-@import "development/scss/font-awesome/regular";
+@import "../font-awesome/fontawesome";
+@import "../font-awesome/icons";
+@import "../font-awesome/regular";
+@import "../font-awesome/solid";
 
+body{
+  height: 100vh;
+}
 .content-box {
     max-width: 1352px;
     margin: 0 auto;
@@ -22,7 +26,9 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 10%;
   background-color: #4a4a49;
+  box-sizing: border-box;
   border-bottom: 1px solid #00000066;
   h1{
     font-family: Charmonman;
@@ -44,27 +50,28 @@ body {
     padding-right: 7rem;
     &:after{
       @extend %fa-icon;
-      @extend .far;
+      @extend .fas;
       content: fa-content($fa-var-user-circle);;
       position: absolute;
-      width: 3rem;
       padding-left: 4rem;
+      color: #FF6600;
+      font-size: 2.5rem;
     }
   }
 }
 
 .app-content {
   display: flex;
-
+  height: 90%;
   .navMen {
     width: 20vw;
-    height: 100vh;
     font-family: "Open Sans";
     background-color: #5B605F;
     p{
       width: 100%;
       padding-top: 2rem;
       padding-bottom: 1rem;
+
     }
     a{
       font-size: 1.7rem;
@@ -72,17 +79,30 @@ body {
       text-decoration: none;
       padding-left: 1.5rem;
       padding-top: 1rem;
+      display: block;
       padding-bottom: 1rem;
+      position: relative;
+      transition: all 0.2s;
       &:hover{
         cursor: pointer;
         border-left: 3px #FF6600 solid;
+        &:after{
+          @extend %fa-icon;
+          @extend .fas;
+          content: fa-content($fa-var-chevron-right);
+          position: absolute;
+          right: 0;
+          color: #FF6600;
+        }
       }
     }
   }
 
   .appBase {
     width: 80vw;
-    height: 100vh;
     background-image: url("../assets/app-background.png");
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: center;
   }
 }
