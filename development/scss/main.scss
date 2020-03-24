@@ -4,12 +4,8 @@
 // Sass:
 // https://fontawesome.com/how-to-use/on-the-web/using-with/sass
 
-
-body{
-  background-color: #BADA55;
-}
-
-.call-to-action {
-  background-color: dimgrey;
-  color: white;
-}
+@import "generic/reset";
+@import "font-awesome/fontawesome";
+@import "settings/all";
+@import "elements/landing-page";
+@import "elements/app";
