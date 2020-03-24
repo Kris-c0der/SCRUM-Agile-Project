@@ -3,6 +3,9 @@
 @import "development/scss/font-awesome/icons";
 @import "development/scss/font-awesome/regular";
 
+body{
+  height: 100vh;
+}
 .content-box {
     max-width: 1352px;
     margin: 0 auto;
@@ -22,7 +25,9 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 10%;
   background-color: #4a4a49;
+  box-sizing: border-box;
   border-bottom: 1px solid #00000066;
   h1{
     font-family: Charmonman;
@@ -55,10 +60,10 @@ body {
 
 .app-content {
   display: flex;
-
+  height: 90%;
   .navMen {
     width: 20vw;
-    height: 100vh;
+    //height: 100vh;
     font-family: "Open Sans";
     background-color: #5B605F;
     p{
@@ -82,7 +87,9 @@ body {
 
   .appBase {
     width: 80vw;
-    height: 100vh;
     background-image: url("../assets/app-background.png");
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: center;
   }
 }
