@@ -1,4 +1,8 @@
-$main-font: 'Open Sans', sans-serif;
-$logo-font: 'Charmonman', cursive;
-$base-size: 14px;
+//Google fonts:
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap&subset=latin-ext");
+@import url("https://fonts.googleapis.com/css?family=Charmonman:400,700&display=swap&subset=latin-ext");
 
+//Font variablles:
+$main-font: "Open Sans", sans-serif;
+$logo-font: "Charmonman", cursive;
+$base-size: 14px;
