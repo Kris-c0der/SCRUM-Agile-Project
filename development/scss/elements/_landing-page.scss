@@ -1,8 +1,9 @@
 .content-box {
+
     max-width: 1352px;
     margin: 0 auto;
 }
-
+//carousel
 .carousel-box {
   position: relative;
 }
@@ -47,3 +48,77 @@ li {
 .carousel .visible {
     display: inline-block;
 }
+//carousel end
+
+//body{
+//    background-color: #BADA55;
+//}
+//CALL TO ACTION STYLES
+.call-to-action-section .content-box {
+    background-color: map_get($colors, header);
+    color: #e5e5e5;
+    display: flex;
+    height: 200px;
+    justify-content: center;
+    align-items: center;
+    font-family: $main-font;
+}
+.cta-banner {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+}
+.cta-text {
+    font-size: 1.3em;
+    max-width: 750px;
+}
+%btn {
+    background-color: map_get($colors, button);
+    text-decoration: none;
+    color: white;
+}
+.action-btn {
+    @extend %btn;
+    font-size: 1.5em;
+    padding: 15px 35px;
+    margin-left: 100px;
+}
+
+.landing-page-header-background-container {
+  background: #5b605f;
+}
+
+.landing-page-header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 35px 90px;
+  h1 {
+    font-family: $logo-font;
+    font-size: 3rem;
+    #first {
+      font-weight: 100;
+      color: white;
+    }
+    #second {
+      color: map-get($map: $colors, $key: logo);
+      font-weight: 700;
+    }
+  }
+  .landing-page-nav {
+    text-transform: uppercase;
+    font-family: $main-font;
+    font-size: 1rem;
+    color: #fff;
+    .landing-page-menu-list {
+      display: flex;
+      li {
+        padding-left: 40px;
+      }
+      #menu-list-accent {
+        color: map-get($map: $colors, $key: logo);
+      }
+    }
+  }
+}
+
+/*--end-nav--*/
