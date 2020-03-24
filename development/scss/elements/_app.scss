@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css?family=Charmonman');
+@import "development/scss/font-awesome";
+@import "development/scss/font-awesome/icons";
+@import "development/scss/font-awesome/regular";
 
 .content-box {
     max-width: 1352px;
@@ -13,4 +17,72 @@ body {
 .content-box {
   max-width: 1352px;
   margin: 0 auto;
+}
+.app-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #4a4a49;
+  border-bottom: 1px solid #00000066;
+  h1{
+    font-family: Charmonman;
+    font-weight:100;
+    color: white;
+    font-size: 2rem;
+    padding: 2rem 0 2rem 1rem;
+  }
+  h1 span{
+    color:#FF6600;
+    font-weight: 700;
+  }
+  p.icons{
+    display: flex;
+    align-items: center;
+    color:#FFFFFA;
+    font-family: Open Sans;
+    font-size: 1.5rem;
+    padding-right: 7rem;
+    &:after{
+      @extend %fa-icon;
+      @extend .far;
+      content: fa-content($fa-var-user-circle);;
+      position: absolute;
+      width: 3rem;
+      padding-left: 4rem;
+    }
+  }
+}
+
+.app-content {
+  display: flex;
+
+  .navMen {
+    width: 20vw;
+    height: 100vh;
+    font-family: "Open Sans";
+    background-color: #5B605F;
+    p{
+      width: 100%;
+      padding-top: 2rem;
+      padding-bottom: 1rem;
+    }
+    a{
+      font-size: 1.7rem;
+      color: white;
+      text-decoration: none;
+      padding-left: 1.5rem;
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+      &:hover{
+        cursor: pointer;
+        border-left: 3px #FF6600 solid;
+      }
+    }
+  }
+
+  .appBase {
+    width: 80vw;
+    height: 100vh;
+    background-image: url("../assets/app-background.png");
+  }
 }
