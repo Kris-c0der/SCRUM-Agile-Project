@@ -3,6 +3,21 @@
 @import "development/scss/font-awesome/icons";
 @import "development/scss/font-awesome/regular";
 
+.content-box {
+    max-width: 1352px;
+    margin: 0 auto;
+}
+
+body {
+  font-family: $main-font;
+  font-size: $base-size;
+  box-sizing: border-box;
+}
+
+.content-box {
+  max-width: 1352px;
+  margin: 0 auto;
+}
 .app-header{
   display: flex;
   justify-content: space-between;
@@ -71,5 +86,3 @@
     background-image: url("../assets/app-background.png");
   }
 }
-
-
