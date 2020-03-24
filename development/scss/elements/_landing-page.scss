@@ -3,6 +3,7 @@
     max-width: 1352px;
     margin: 0 auto;
 }
+
 //carousel
 .carousel-box {
   position: relative;
@@ -50,9 +51,6 @@ li {
 }
 //carousel end
 
-//body{
-//    background-color: #BADA55;
-//}
 //CALL TO ACTION STYLES
 .call-to-action-section .content-box {
     background-color: map_get($colors, header);
