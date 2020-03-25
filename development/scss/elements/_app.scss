@@ -47,15 +47,15 @@ body {
     color:#FFFFFA;
     font-family: Open Sans;
     font-size: 1.5rem;
-    padding-right: 7rem;
+    padding-right: 3rem;
     &:after{
       @extend %fa-icon;
       @extend .fas;
-      content: fa-content($fa-var-user-circle);;
-      position: absolute;
-      padding-left: 4rem;
+      content: fa-content($fa-var-user-circle);
+      position: relative;
       color: #FF6600;
       font-size: 2.5rem;
+      margin-left: 2rem;
     }
   }
 }
@@ -92,6 +92,7 @@ body {
           content: fa-content($fa-var-chevron-right);
           position: absolute;
           right: 0;
+          padding-right: 1rem;
           color: #FF6600;
         }
       }
