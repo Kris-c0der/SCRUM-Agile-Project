@@ -1,3 +1,5 @@
+@import '../font-awesome/fontawesome';
+
 .content-box {
   max-width: 1352px;
   margin: 0 auto;
@@ -222,3 +224,118 @@
 }
 
 // END - 1.6 STYLE
+
+//START 1.7 STYLE
+
+.page-info {
+  background: map-get($colors, 'nav');
+  .content-box {
+    display: flex;
+    justify-content: center;
+    .column {
+      font-size: 1.2rem;
+      color: #fff;
+      flex: 1;
+      max-width: 350px;
+      line-height: 1.2rem;
+      padding: 30px 15px;
+
+      h2 {
+        font-size: 2rem;
+        padding-bottom: 15px;
+      }
+    }
+    .column-second {
+      margin: 0px 20px;
+    }
+    .column-third {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      .submit_box {
+        display: flex;
+        margin-top: 20px;
+
+        input {
+          max-width: 200px;
+        }
+
+        button {
+          background-color: #ff6600;
+          text-decoration: none;
+          color: white;
+          cursor: pointer;
+          border: none;
+          font-size: 1.2rem;
+          padding: 5px 10px;
+        }
+      }
+      .social-media-box {
+        display: flex;
+
+        font-size: 1.5rem;
+        margin-top: 20px;
+      }
+      .twitter {
+        @extend %fa-icon;
+        @extend .fab;
+        text-decoration: none;
+        color: #fff;
+        padding: 0 40px;
+
+        &:before {
+          content: fa-content($fa-var-twitter-square);
+        }
+      }
+
+      .facebook {
+        @extend %fa-icon;
+        @extend .fab;
+        text-decoration: none;
+        color: #fff;
+        padding-left: 5px;
+
+        &:before {
+          content: fa-content($fa-var-facebook-square);
+        }
+      }
+
+      .instagram {
+        @extend %fa-icon;
+        @extend .fab;
+        text-decoration: none;
+        color: #fff;
+
+        &:before {
+          content: fa-content($fa-var-instagram-square);
+        }
+      }
+    }
+
+    .column-second {
+      ul {
+        list-style: disc;
+        list-style-position: inside;
+        line-height: 1.5rem;
+      }
+    }
+  }
+}
+
+.page-footer{
+  background: map-get($map: $colors, $key: header);
+  font-size: 1.2rem;
+  color: #fff;
+  .content-box{
+    display: flex;
+    justify-content: center;
+    .copyright-text {
+      padding: 15px 0;
+      span {
+        color: map-get($map: $colors, $key: 'button');
+      }
+    }
+  }
+}
+
+//END 1.7 STYLE
