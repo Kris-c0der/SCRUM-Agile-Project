@@ -1,0 +1,80 @@
+@import "../font-awesome/fontawesome";
+@import "../font-awesome/icons";
+@import "../font-awesome/regular";
+@import "../font-awesome/solid";
+
+.notifications {
+  width: 100%;
+  div {
+    background-color: white;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  .first-not p{
+    color: map-get($colors, $key: info);
+    border: 1px map-get($colors, $key: info) dashed;
+    padding: 0.8rem;
+    position: relative;
+    &:before{
+      @extend %fa-icon;
+      @extend .fas;
+      content: fa-content($fa-var-info-circle);
+      font-size: 2rem;
+      padding-right: 1rem;
+    }
+    &:after{
+      @extend %fa-icon;
+      @extend .fas;
+      content: fa-content($fa-var-window-close);
+      position: absolute;
+      right: 0.2rem;
+      top: 0.2rem;
+      font-size: 1rem;
+    }
+  }
+  .sec-not p{
+    color: map-get($colors, $key: warning);
+    border: 1px map-get($colors, $key: warning) dashed;
+    padding: 0.8rem;
+    position: relative;
+    &:before{
+      @extend %fa-icon;
+      @extend .fas;
+      content: fa-content($fa-var-exclamation-circle);
+      font-size: 2rem;
+      padding-right: 1rem;
+    }
+    &:after{
+      @extend %fa-icon;
+      @extend .fas;
+      content: fa-content($fa-var-window-close);
+      position: absolute;
+      right: 0.2rem;
+      top: 0.2rem;
+      font-size: 1rem;
+    }
+  }
+  .third-not p{
+    color: map-get($colors, $key: success);
+    border: 1px map-get($colors, $key: success) dashed;
+    padding: 0.8rem;
+    position: relative;
+    &:before{
+      @extend %fa-icon;
+      @extend .fas;
+      content: fa-content($fa-var-check-circle);
+      font-size: 2rem;
+      padding-right: 1rem;
+    }
+    &:after{
+      @extend %fa-icon;
+      @extend .fas;
+      content: fa-content($fa-var-window-close);
+      position: absolute;
+      right: 0.2rem;
+      top: 0.2rem;
+      font-size: 1rem;
+    }
+  }
+}
