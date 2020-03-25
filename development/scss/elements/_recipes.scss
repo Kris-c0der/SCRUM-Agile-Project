@@ -41,7 +41,6 @@
     width: 670px;
   }
 }
-
 .recipes-details {
   display: flex;
   margin: 0 auto;
@@ -49,6 +48,9 @@
   textarea {
     resize: none;
     width: 400px;
+    box-sizing: border-box;
+    margin-bottom: 30px;
+    margin-left: 10px;
   }
 }
 .instruction-title {
@@ -63,4 +65,29 @@
   color: green;
   margin-left: 5px;
   vertical-align: top;
+}
+#ingredients-input {
+  width: 400px;
+  margin-bottom: 60px;
+}
+#recipe-name {
+  width: 672px;
+}
+
+%line-styles {
+  margin-left: 10px;
+  overflow: auto;
+  width: 400px;
+  height: 180px;
+  line-height: 20px;
+}
+.instruction-list {
+  list-style: decimal;
+  @extend %line-styles;
+  list-style-position: inside;
+}
+.ingredients-list {
+  list-style: disc;
+  @extend %line-styles;
+  list-style-position: inside;
 }
