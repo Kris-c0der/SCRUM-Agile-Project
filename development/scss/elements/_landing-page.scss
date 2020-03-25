@@ -1,3 +1,5 @@
+@import '../font-awesome/fontawesome';
+
 .content-box {
   max-width: 1352px;
   margin: 0 auto;
@@ -225,9 +227,61 @@
 
 //START 1.7 STYLE
 
-.page-info{
+.page-info {
   background: map-get($colors, 'nav');
+  .content-box {
+    display: flex;
+    justify-content: space-around;
+    .column {
+      font-size: 1rem;
+      color: #fff;
+      flex: 1;
+      max-width: 250px;
+      h2 {
+        font-size: 1.3rem;
+        padding-bottom: 15px;
+      }
+      .third {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        
+      }
+    }
+  }
+}
 
+.twitter {
+  @extend %fa-icon;
+  @extend .fab;
+  text-decoration: none;
+  color: #fff;
+
+  &:before {
+    content: fa-content($fa-var-twitter-square);
+  }
+}
+
+.facebook {
+  @extend %fa-icon;
+  @extend .fab;
+  text-decoration: none;
+  color: #fff;
+
+  &:before {
+    content: fa-content($fa-var-facebook-square);
+  }
+}
+
+.instagram {
+  @extend %fa-icon;
+  @extend .fab;
+  text-decoration: none;
+  color: #fff;
+
+  &:before {
+    content: fa-content($fa-var-instagram-square);
+  }
 }
 
 //END 1.7 STYLE
