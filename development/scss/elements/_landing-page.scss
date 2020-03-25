@@ -111,8 +111,14 @@
     font-family: $main-font;
     font-size: 1rem;
     color: #fff;
+    scroll-behavior: smooth;
     .landing-page-menu-list {
+      scroll-behavior: smooth;
       display: flex;
+      a {
+        text-decoration: none;
+        color: #fff;
+      }
       li {
         padding-left: 40px;
       }
@@ -322,11 +328,11 @@
   }
 }
 
-.page-footer{
+.page-footer {
   background: map-get($map: $colors, $key: header);
   font-size: 1.2rem;
   color: #fff;
-  .content-box{
+  .content-box {
     display: flex;
     justify-content: center;
     .copyright-text {
