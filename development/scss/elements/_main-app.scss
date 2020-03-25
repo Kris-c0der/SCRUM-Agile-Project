@@ -1,0 +1,36 @@
+@import "../font-awesome/fontawesome";
+@import "../font-awesome/icons";
+@import "../font-awesome/regular";
+
+.main-section {
+  flex: 1;
+
+}
+
+.widgets-wrapper {
+  display: flex;
+}
+
+.box {
+  height: 150px;
+  width: 150px;
+  background-color: map-get($colors, screen);
+  display: inline-block;
+  margin: 0 1rem 1rem 0;
+  border: 2px dotted map-get($colors, success);
+  color: map-get($colors, success);
+  padding: 2rem;
+  text-align: center;
+
+  &::before {
+    @extend %fa-icon;
+    @extend .far;
+    content: fa-content($fa-var-plus-square);
+    font-size: 5rem;
+  }
+
+  p {
+    margin-top: 2.5rem;
+    font-size: 1.4rem;
+  }
+}
