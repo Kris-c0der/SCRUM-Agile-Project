@@ -84,7 +84,7 @@
 //CALL TO ACTION STYLES END
 
 .landing-page-header-background-container {
-  background: #5b605f;
+  background: map-get($map: $colors, $key: header);
 }
 
 .landing-page-header {
@@ -100,7 +100,7 @@
       color: white;
     }
     #second {
-      color: map-get($map: $colors, $key: logo);
+      color: map-get($map: $colors, $key: button);
       font-weight: 700;
     }
   }
@@ -115,7 +115,7 @@
         padding-left: 40px;
       }
       #menu-list-accent {
-        color: map-get($map: $colors, $key: logo);
+        color: map-get($map: $colors, $key: button);
       }
     }
   }
