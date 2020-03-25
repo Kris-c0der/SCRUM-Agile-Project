@@ -19,5 +19,6 @@ form.addEventListener('submit', function (elem) {
 if(localStorage.length > 0){
     secForm.style.display = 'none';
     nameUser.innerText = localStorage.savedName;
+    mainSect.style.display = 'block';
 
 }
