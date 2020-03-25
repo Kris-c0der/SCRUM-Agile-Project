@@ -86,7 +86,7 @@
 //CALL TO ACTION STYLES END
 
 .landing-page-header-background-container {
-  background: #5b605f;
+  background: map-get($map: $colors, $key: header);
 }
 
 .landing-page-header {
@@ -102,7 +102,7 @@
       color: white;
     }
     #second {
-      color: map-get($map: $colors, $key: logo);
+      color: map-get($map: $colors, $key: button);
       font-weight: 700;
     }
   }
@@ -111,13 +111,19 @@
     font-family: $main-font;
     font-size: 1rem;
     color: #fff;
+    scroll-behavior: smooth;
     .landing-page-menu-list {
+      scroll-behavior: smooth;
       display: flex;
+      a {
+        text-decoration: none;
+        color: #fff;
+      }
       li {
         padding-left: 40px;
       }
       #menu-list-accent {
-        color: map-get($map: $colors, $key: logo);
+        color: map-get($map: $colors, $key: button);
       }
     }
   }
@@ -322,11 +328,11 @@
   }
 }
 
-.page-footer{
+.page-footer {
   background: map-get($map: $colors, $key: header);
   font-size: 1.2rem;
   color: #fff;
-  .content-box{
+  .content-box {
     display: flex;
     justify-content: center;
     .copyright-text {
