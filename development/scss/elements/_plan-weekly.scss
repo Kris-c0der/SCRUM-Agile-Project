@@ -1,0 +1,71 @@
+.plan-weekly {
+  background-color: map-get($map: $colors, $key: screen);
+  border: 1px dashed map-get($map: $colors, $key: header);
+  padding: 3px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  box-sizing: border-box;
+  height: 350px;
+}
+
+
+table {
+  padding: 0 2rem;
+  margin: 0 3em;
+  tbody {
+    text-align: center;
+    font-family: $main-font;
+    font-size: 1.2rem;
+    #table-tittle {
+      font-family: $main-font;
+      font-size: 1.2rem;
+      font-weight: bold;
+      text-align: center;
+      color: map-get($map: $colors, $key: button);
+      vertical-align: middle;
+    }
+
+    td {
+      padding: 6px 10px 6px 18px;
+      font-size: 18px;
+      vertical-align: middle;
+      border-bottom: 1px solid;
+      border-color: lightgrey;
+      height: fit-content;
+      color: map-get($map: $colors, $key: table);
+      text-align: left;
+
+    }
+    tr {
+      height: auto;
+      text-align: left;
+      border-bottom: 1px inset;
+      border-color: lightgrey;
+      &#days {
+        font-size: 17px;
+        font-weight: bold;
+        color: map-get($map: $colors, $key: nav);
+      }
+    }
+  }
+}
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  button {
+    background-color: transparent;
+    color: map-get($map: $colors, $key: button);
+    border: none;
+    font-size: 15px;
+    cursor: pointer;
+    padding: 7px;
+  }
+}
+
+td.days {
+  font-size: 21px;
+  font-weight: bold;
+  color: map-get($map: $colors, $key: nav);
+  text-align: left;
+}
