@@ -3,17 +3,18 @@
 @import "../font-awesome/regular";
 @import "../font-awesome/solid";
 
-.notifications {
-  width: 100%;
+.notifications-wrapper {
+  flex: 6;
   div {
     background-color: white;
     margin-bottom: 1rem;
     font-size: 1.5rem;
     font-weight: bold;
   }
+
   .first-not p{
     color: map-get($colors, $key: info);
-    border: 1px map-get($colors, $key: info) dashed;
+    border: 2px map-get($colors, $key: info) dashed;
     padding: 0.8rem;
     position: relative;
     &:before{
@@ -35,7 +36,7 @@
   }
   .sec-not p{
     color: map-get($colors, $key: warning);
-    border: 1px map-get($colors, $key: warning) dashed;
+    border: 2px map-get($colors, $key: warning) dashed;
     padding: 0.8rem;
     position: relative;
     &:before{
@@ -57,7 +58,7 @@
   }
   .third-not p{
     color: map-get($colors, $key: success);
-    border: 1px map-get($colors, $key: success) dashed;
+    border: 2px map-get($colors, $key: success) dashed;
     padding: 0.8rem;
     position: relative;
     &:before{
@@ -76,5 +77,9 @@
       top: 0.2rem;
       font-size: 1rem;
     }
+  }
+
+  p:after {
+    cursor: pointer;
   }
 }
