@@ -27,15 +27,48 @@
   padding: 5px 10px;
 }
 
+.justify-fix {
+  display: flex;
+  justify-content: center;
+}
+
 .new-plan-container {
   @include mainWindow;
-  .form-header {
-    @include formHeader;
-    h2 {
-      font-size: 1.7rem;
+  #new-schedule-form {
+    font-size: 1.2rem;
+    color: map-get($map: $colors, $key: nav);
+    .form-header {
+      @include formHeader;
+      h2 {
+        font-size: 1.7rem;
+      }
+      button {
+        @include submitButton;
+      }
     }
-    button {
-      @include submitButton;
+    label {
+      display: inline-block;
+      width: 150px;
+      padding: 20px 10px;
+    }
+    input[type='text'] {
+      width: 75%;
+      padding: 5px;
+    }
+    input[type='number'] {
+      width: 30px;
+      height: 30px;
+      padding: 1px;
+      text-align: center;
+    }
+    #plan-description-box {
+      display: flex;
+      align-items: baseline;
+      textarea {
+        width: 75%;
+        padding: 5px;
+        margin-left: 5px;
+      }
     }
   }
 }
