@@ -3,13 +3,39 @@
   border: 1px dashed map-get($map: $colors, $key: header);
   box-sizing: border-box;
   height: 100%;
+  padding: 20px 20px;
 }
 
 @mixin formHeader {
-    
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid;
+  border-color: lightgrey;
+  padding-bottom: 5px;
+  color: map-get($map: $colors, $key: button);
+  font-weight: bold;
+}
+
+@mixin submitButton {
+  background-color: #ff6600;
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+  border: none;
+  font-size: 1.2rem;
+  padding: 5px 10px;
 }
 
 .new-plan-container {
-    @include mainWindow;
-    
+  @include mainWindow;
+  .form-header {
+    @include formHeader;
+    h2 {
+      font-size: 1.7rem;
+    }
+    button {
+      @include submitButton;
+    }
+  }
 }
