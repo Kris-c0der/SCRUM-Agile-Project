@@ -1,50 +1,54 @@
 <!DOCTYPE html>
 <html lang="pl">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>Zaplanuj Jedzonko</title>
-  <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
-    integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
-    crossorigin="anonymous" />
-  <link rel="stylesheet" href="css/main.css" />
-</head>
-
-<body>
-  <header class="app-header">
-    <h1>Zaplanuj<span>Jedzonko</span></h1>
-    <p class="icons">Imię</p>
-  </header>
-  <section class="app-content">
-    <div class="navMen">
-      <p><a href="#">Pulpit</a></p>
-      <p><a href="#">Przepisy</a></p>
-      <p><a href="#">Plany</a></p>
-    </div>
-    <div class="appBase">
-      <section class="nav-welcome">
-        <h1>Witaj,</h1>
-        <p>wygląda na to że jesteś tutaj <br />pierwszy raz!</p>
-        <form method="#">
-          <input id="value" type="text"
-            placeholder="tutaj wpisz jak masz na imię" required />
-          <input class="b" type="submit" value="Gotowe!" />
-        </form>
-        <p class="text-second">
-          Podaj nam swoje imię, a my zorganizujemy <br />
-          dla Ciebie naszą aplikację :)
-        </p>
-      </section>
-      <section class="main-section">
-        <div class="upper-wrapper">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Zaplanuj Jedzonko</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+      integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <h1>Zaplanuj<span>Jedzonko</span></h1>
+      <p class="icons">Imię</p>
+    </header>
+    <section class="app-content">
+      <div class="navMen">
+        <p><a class="active" href="app.html">Pulpit</a></p>
+        <p><a href="recipes.html">Przepisy</a></p>
+        <p><a href="#">Plany</a></p>
+      </div>
+      <div class="appBase">
+        <section class="nav-welcome">
+          <h1>Witaj,</h1>
+          <p>wygląda na to że jesteś tutaj <br />pierwszy raz!</p>
+          <form method="#">
+            <input
+              id="value"
+              type="text"
+              placeholder="tutaj wpisz jak masz na imię"
+              required
+            />
+            <input class="b" type="submit" value="Gotowe!" />
+          </form>
+          <p class="text-second">
+            Podaj nam swoje imię, a my zorganizujemy <br />
+            dla Ciebie naszą aplikację :)
+          </p>
+        </section>
+        <section class="main-section">
+          <div class="upper-wrapper">
             <div class="widgets-wrapper">
               <div id="add-reciepes" class="box">
                 <p>dodaj przepis</p>
               </div>
-              <div class="box">
+              <div id="add-plan" class="box">
                 <p>dodaj plan</p>
               </div>
               <div class="notifications-wrapper">
