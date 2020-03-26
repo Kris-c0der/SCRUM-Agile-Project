@@ -37,8 +37,7 @@ if(localStorage.length > 0){
 newImg.setAttribute("src", srcAtr );
       console.log(srcAtr);
     });
-  });
 
     newBtn.addEventListener('click', function() {
     modalEl.parentElement.removeChild(modalEl);
-})
+});

@@ -1,0 +1,108 @@
+@import "../font-awesome/fontawesome";
+@import "../font-awesome/icons";
+@import "../font-awesome/regular";
+@import "../font-awesome/solid";
+
+.add-recipes-section {
+  background-color: #fffdf4;
+  width: 100%;
+  border: 1px dashed darkgrey;
+  color: map_get($colors, nav);
+}
+.add-recipes-header {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2px solid darkgrey;
+  align-items: center;
+  margin: 0 auto;
+}
+.add-recipes-box {
+  width: 95%;
+  margin: 1.89rem auto 1.89rem auto;
+}
+.new-recipes-header {
+  color: map_get($colors, button);
+  font-size: 1.6rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+#save-recipes-btn {
+  text-decoration: none;
+  border: none;
+  background-color: map_get($colors, button);
+  color: white;
+  padding: 5px 10px;
+  margin-bottom: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.recipes-name {
+  font-size: 1.6rem;
+  margin: 0.63rem 3.12rem 2.5rem 0.75rem;
+  div {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+  }
+  div textarea {
+    resize: none;
+    width: 39rem;
+  }
+}
+
+#recipe-name {
+  width: 39.15rem;
+}
+.recipes-details {
+  display: flex;
+  margin: 0 auto;
+  justify-content: space-between;
+  textarea {
+    resize: none;
+    width: 25rem;
+    box-sizing: border-box;
+    margin-bottom: 1.9rem;
+    margin-left: 0.63rem;
+  }
+}
+.instruction-title {
+  border-bottom: 2px solid darkgrey;
+  width: 28rem;
+  font-size: 1.6rem;
+  margin-bottom: 0.63rem;
+  text-transform: uppercase;
+}
+#ingredients-input {
+  width: 25rem;
+  margin-bottom: 3.75rem;
+  height: 20px;
+}
+.add-btn {
+  position: relative;
+  vertical-align: top;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-size: 30px;
+  color: green;
+  height: 0;
+  width: 0;
+}
+
+%line-styles {
+  margin-left: 10px;
+  overflow: auto;
+  width: 25rem;
+  height: 11.25rem;
+  line-height: 1.25rem;
+}
+.instruction-list {
+  list-style: decimal;
+  @extend %line-styles;
+  list-style-position: inside;
+}
+.ingredients-list {
+  list-style: disc;
+  @extend %line-styles;
+  list-style-position: inside;
+}
