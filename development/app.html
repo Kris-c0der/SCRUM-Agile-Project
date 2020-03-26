@@ -166,7 +166,7 @@
         </section>
         <div class="modal-window">
           <section class="add-recipes-section">
-            <form class="add-recipes-box">
+            <form class="add-recipes-box" id="form-add-recipe">
               <header class="add-recipes-header">
                 <p class="new-recipes-header">Nowy przepis</p>
                 <input
@@ -181,15 +181,15 @@
                   ><input type="text" id="recipe-name" />
                 </div>
                 <div>
-                  <label class="reciepies-label">Opis przepisu</label
-                  ><textarea rows="3"></textarea>
+                  <label class="reciepies-label">Opis przepisu</label>
+                  <textarea rows="3" id="recipe-description"></textarea>
                 </div>
               </div>
               <div class="recipes-details">
                 <div class="instructions-box">
                   <p class="instruction-title">Instrukcje</p>
                   <textarea id="instruction-input" rows="3"></textarea>
-                  <button class="add-btn">
+                  <button class="add-btn instruction-btn">
                     <i class="fas fa-plus-square"></i>
                   </button>
                   <ol class="instruction-list"></ol>
@@ -197,7 +197,7 @@
                 <div class="ingredients">
                   <p class="instruction-title">Składniki</p>
                   <input type="text" id="ingredients-input" />
-                  <button class="add-btn">
+                  <button class="add-btn ingredients-btn">
                     <i class="fas fa-plus-square"></i>
                   </button>
                   <ul class="ingredients-list"></ul>
