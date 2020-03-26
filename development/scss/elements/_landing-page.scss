@@ -166,7 +166,7 @@
 // NEWSLETTER
 
 .newsletter {
-  height: 100px;
+  height: 150px;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -212,7 +212,8 @@
     .author-photo {
       width: 337px;
       height: 357px;
-      background: #5b605f;
+      background-image: url("https://images.pexels.com/photos/2494659/pexels-photo-2494659.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+      background-size: cover;
     }
     .author-description {
       max-width: 592px;
