@@ -96,6 +96,19 @@ body {
           color: #FF6600;
         }
       }
+      &.active{
+        cursor: pointer;
+        border-left: 3px #FF6600 solid;
+        &:after{
+          @extend %fa-icon;
+          @extend .fas;
+          content: fa-content($fa-var-chevron-right);
+          position: absolute;
+          right: 0;
+          padding-right: 1rem;
+          color: #FF6600;
+        }
+      }
     }
   }
 

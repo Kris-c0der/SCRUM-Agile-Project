@@ -3,7 +3,7 @@ const form = document.querySelector('form');
 const inpText = document.querySelector('#value');
 const secForm = document.querySelector('.nav-welcome');
 const mainSect = document.querySelector('.main-section');
-console.log(mainSect);
+console.log(nameUser);
 
 form.addEventListener('submit', function (elem) {
     elem.preventDefault();
@@ -20,5 +20,4 @@ if(localStorage.length > 0){
     secForm.style.display = 'none';
     nameUser.innerText = localStorage.savedName;
     mainSect.style.display = 'block';
-
 }

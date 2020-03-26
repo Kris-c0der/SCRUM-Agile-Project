@@ -3,6 +3,23 @@
 @import "../font-awesome/regular";
 @import "../font-awesome/solid";
 
+.navMen{
+  a{
+    &.active{
+      cursor: pointer;
+      border-left: 3px #FF6600 solid;
+      &:after{
+        @extend %fa-icon;
+        @extend .fas;
+        content: fa-content($fa-var-chevron-right);
+        position: absolute;
+        right: 0;
+        padding-right: 1rem;
+        color: #FF6600;
+      }
+    }
+  }
+}
 .recipes-content {
   border: 2px dotted map-get($colors, nav);
   background-color: map-get($colors, screen);
@@ -30,6 +47,7 @@
     position: relative;
     color: map-get($colors, success);
     font-size: 2rem;
+    cursor: pointer;
   }
 }
 // NAGŁÓWEK LISTY
@@ -53,15 +71,17 @@
   }
 }
 // LISTA
-.all-recipes{
-  padding: 0.7rem;
+.all-recipes {
   font-size: 1rem;
-  margin: 0 1rem;
+  padding: 0 1.5rem;
+}
+.recipes-content{
+  overflow: scroll;
 }
 .recipes{
   display: flex;
   border-bottom: 1px solid #A1A194;
-  margin-bottom: 1rem;
+  padding: 1rem 0;
   .recipes-id{
     display: flex;
     flex: 1;
@@ -86,6 +106,8 @@
       position: relative;
       color: map-get($colors, warning);
       font-size: 1.2rem;
+      cursor: pointer;
+      padding-right: 1rem;
     }
     &:after{
       @extend %fa-icon;
@@ -94,6 +116,7 @@
       position: relative;
       color: map-get($colors, trash);
       font-size: 1.2rem;
+      cursor: pointer;
     }
   }
 }
