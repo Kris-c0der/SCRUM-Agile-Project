@@ -4,10 +4,12 @@
 @import "../font-awesome/solid";
 
 .add-recipes-section {
+  display: none;
   background-color: #fffdf4;
-  width: 100%;
+  max-width: 1000px;
   border: 1px dashed darkgrey;
   color: map_get($colors, nav);
+  flex: 1;
 }
 .add-recipes-header {
   display: flex;
@@ -46,12 +48,15 @@
   }
   div textarea {
     resize: none;
-    width: 39rem;
+    width: 100%;
   }
 }
 
 #recipe-name {
-  width: 39.15rem;
+  width: 100%;
+}
+.reciepies-label {
+  width: 300px;
 }
 .recipes-details {
   display: flex;
