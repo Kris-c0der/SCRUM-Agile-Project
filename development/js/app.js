@@ -22,3 +22,23 @@ if(localStorage.length > 0){
     mainSect.style.display = 'block';
 
 }
+// Show modal //
+
+  const bodyEl = document.querySelector("body");
+
+  const modalEl = document.createElement("div");
+  modalEl.classList.add("fullScreen");
+
+
+
+    btn.addEventListener("click", function() {
+
+      modalEl.style.display = 'block';
+newImg.setAttribute("src", srcAtr );
+      console.log(srcAtr);
+    });
+  });
+
+    newBtn.addEventListener('click', function() {
+    modalEl.parentElement.removeChild(modalEl);
+})
