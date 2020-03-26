@@ -54,6 +54,9 @@
     input[type='text'] {
       width: 75%;
       padding: 5px;
+      &::placeholder {
+        font-family: $main-font;
+      }
     }
     input[type='number'] {
       width: 30px;
@@ -64,11 +67,44 @@
     #plan-description-box {
       display: flex;
       align-items: baseline;
+      #description {
+        &::placeholder {
+          font-family: $main-font;
+        }
+      }
       textarea {
         width: 75%;
         padding: 5px;
         margin-left: 5px;
+        resize: none;
       }
+    }
+  }
+}
+
+#new-plan-table {
+    margin-top: 15px;
+  th {
+    vertical-align: middle;
+    width: 200px;
+    line-height: 2rem;
+    font-weight: bold;
+    text-align: center;
+    padding: 0px 10px;
+    &[scope='col'] {
+      border-top: 1px solid lightgrey;
+    }
+  }
+  td {
+    text-align: center;
+    padding: 8px 0px 8px 30px;
+    select {
+      padding: 2px 2px;
+      color: #666666;
+      border: 1px solid #c8c8c8;
+      border-radius: 5px;
+      border-style: solid;
+      font-family: $main-font;
     }
   }
 }

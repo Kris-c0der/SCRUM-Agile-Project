@@ -171,19 +171,263 @@
             </div>
 
             <div>
-            <label for="plan-name">Nazwa planu</label>
-            <input type="text" id="plan-name">
+              <label for="plan-name">Nazwa planu</label>
+              <input type="text" id="plan-name"
+                placeholder="Tutaj wpisz nazwę planu">
             </div>
 
             <div id="plan-description-box">
-            <label for="description">Opis planu</label>
-            <textarea id="description" cols="50" rows="10"></textarea>
+              <label for="description">Opis planu</label>
+              <textarea id="description" rows="10"
+                placeholder="Tutaj umieść opis planu"></textarea>
             </div>
 
             <div>
-            <label for="week-number">Numer tygodnia</label>
-            <input type="number" id="week-number">
+              <label for="week-number">Numer tygodnia</label>
+              <input type="number" id="week-number">
             </div>
+
+            <table id="new-plan-table">
+              <tr id="table-col-header">
+                <th></th>
+                <th scope="col">ŚNIADANIE</th>
+                <th scope="col">DRUGIE ŚNIADANIE</th>
+                <th scope="col">ZUPA</th>
+                <th scope="col">DRUGIE DANIE</th>
+                <th scope="col">KOLACJA</th>
+              </tr>
+              <tr>
+                <th scope="row">PONIEDZIAŁEK</th>
+                <td><select id="śniadanie" name="śniadanie">
+                    <option value="#">Hotdog z żabki</option>
+                    <option value="#">Kurczak</option>
+                    <option value="#">Chrupki</option>
+                    <option value="#">Budyń</option>
+                  </select></td>
+                <td><select id="drugie-śniadanie" name="drugie-śniadanie">
+                    <option value="#">Hotdog z żabki</option>
+                    <option value="#">Kurczak</option>
+                    <option value="#">Chrupki</option>
+                    <option value="#">Budyń</option>
+                  </select></td>
+                <td><select id="zupa" name="zupa">
+                    <option value="#">Hotdog z żabki</option>
+                    <option value="#">Kurczak</option>
+                    <option value="#">Chrupki</option>
+                    <option value="#">Budyń</option>
+                  </select></td>
+                <td><select id="drugie-danie" name="drugie-danie">
+                    <option value="#">Hotdog z żabki</option>
+                    <option value="#">Kurczak</option>
+                    <option value="#">Chrupki</option>
+                    <option value="#">Budyń</option>
+                  </select></td>
+                <td><select id="kolacja" name="kolacja">
+                    <option value="#">Hotdog z żabki</option>
+                    <option value="#">Kurczak</option>
+                    <option value="#">Chrupki</option>
+                    <option value="#">Budyń</option>
+                  </select></td>
+              </tr>
+              <tr>
+                <th scope="row">WTOREK</th>
+                <td><select id="śniadanie" name="śniadanie">
+                    <option value="#">Hotdog z żabki</option>
+                    <option value="#">Kurczak</option>
+                    <option value="#">Chrupki</option>
+                    <option value="#">Budyń</option>
+                  </select></td>
+                <td><select id="drugie-śniadanie" name="drugie-śniadanie">
+                    <option value="#">Hotdog z żabki</option>
+                    <option value="#">Kurczak</option>
+                    <option value="#">Chrupki</option>
+                    <option value="#">Budyń</option>
+                  </select></td>
+                <td><select id="zupa" name="zupa">
+                    <option value="#">Hotdog z żabki</option>
+                    <option value="#">Kurczak</option>
+                    <option value="#">Chrupki</option>
+                    <option value="#">Budyń</option>
+                  </select></td>
+                <td><select id="drugie-danie" name="drugie-danie">
+                    <option value="#">Hotdog z żabki</option>
+                    <option value="#">Kurczak</option>
+                    <option value="#">Chrupki</option>
+                    <option value="#">Budyń</option>
+                  </select></td>
+                <td><select id="kolacja" name="kolacja">
+                    <option value="#">Hotdog z żabki</option>
+                    <option value="#">Kurczak</option>
+                    <option value="#">Chrupki</option>
+                    <option value="#">Budyń</option>
+                  </select></td>
+              </tr>
+              <tr>
+                <th scope="row">ŚRODA</th>
+                <td><select id="śniadanie" name="śniadanie">
+                    <option value="#">Hotdog z żabki</option>
+                    <option value="#">Kurczak</option>
+                    <option value="#">Chrupki</option>
+                    <option value="#">Budyń</option>
+                  </select></td>
+                <td><select id="drugie-śniadanie" name="drugie-śniadanie">
+                    <option value="#">Hotdog z żabki</option>
+                    <option value="#">Kurczak</option>
+                    <option value="#">Chrupki</option>
+                    <option value="#">Budyń</option>
+                  </select></td>
+                <td><select id="zupa" name="zupa">
+                    <option value="#">Hotdog z żabki</option>
+                    <option value="#">Kurczak</option>
+                    <option value="#">Chrupki</option>
+                    <option value="#">Budyń</option>
+                  </select></td>
+                <td><select id="drugie-danie" name="drugie-danie">
+                    <option value="#">Hotdog z żabki</option>
+                    <option value="#">Kurczak</option>
+                    <option value="#">Chrupki</option>
+                    <option value="#">Budyń</option>
+                  </select></td>
+                <td><select id="kolacja" name="kolacja">
+                    <option value="#">Hotdog z żabki</option>
+                    <option value="#">Kurczak</option>
+                    <option value="#">Chrupki</option>
+                    <option value="#">Budyń</option>
+                  </select></td>
+              </tr>
+              <tr>
+                <th scope="row">CZWARTEK</th>
+                <td><select id="śniadanie" name="śniadanie">
+                    <option value="#">Hotdog z żabki</option>
+                    <option value="#">Kurczak</option>
+                    <option value="#">Chrupki</option>
+                    <option value="#">Budyń</option>
+                  </select></td>
+                <td><select id="drugie-śniadanie" name="drugie-śniadanie">
+                    <option value="#">Hotdog z żabki</option>
+                    <option value="#">Kurczak</option>
+                    <option value="#">Chrupki</option>
+                    <option value="#">Budyń</option>
+                  </select></td>
+                <td><select id="zupa" name="zupa">
+                    <option value="#">Hotdog z żabki</option>
+                    <option value="#">Kurczak</option>
+                    <option value="#">Chrupki</option>
+                    <option value="#">Budyń</option>
+                  </select></td>
+                <td><select id="drugie-danie" name="drugie-danie">
+                    <option value="#">Hotdog z żabki</option>
+                    <option value="#">Kurczak</option>
+                    <option value="#">Chrupki</option>
+                    <option value="#">Budyń</option>
+                  </select></td>
+                <td><select id="kolacja" name="kolacja">
+                    <option value="#">Hotdog z żabki</option>
+                    <option value="#">Kurczak</option>
+                    <option value="#">Chrupki</option>
+                    <option value="#">Budyń</option>
+                  </select></td>
+              </tr>
+              <tr>
+                <th scope="row">PIĄTEK</th>
+                <td><select id="śniadanie" name="śniadanie">
+                    <option value="#">Hotdog z żabki</option>
+                    <option value="#">Kurczak</option>
+                    <option value="#">Chrupki</option>
+                    <option value="#">Budyń</option>
+                  </select></td>
+                <td><select id="drugie-śniadanie" name="drugie-śniadanie">
+                    <option value="#">Hotdog z żabki</option>
+                    <option value="#">Kurczak</option>
+                    <option value="#">Chrupki</option>
+                    <option value="#">Budyń</option>
+                  </select></td>
+                <td><select id="zupa" name="zupa">
+                    <option value="#">Hotdog z żabki</option>
+                    <option value="#">Kurczak</option>
+                    <option value="#">Chrupki</option>
+                    <option value="#">Budyń</option>
+                  </select></td>
+                <td><select id="drugie-danie" name="drugie-danie">
+                    <option value="#">Hotdog z żabki</option>
+                    <option value="#">Kurczak</option>
+                    <option value="#">Chrupki</option>
+                    <option value="#">Budyń</option>
+                  </select></td>
+                <td><select id="kolacja" name="kolacja">
+                    <option value="#">Hotdog z żabki</option>
+                    <option value="#">Kurczak</option>
+                    <option value="#">Chrupki</option>
+                    <option value="#">Budyń</option>
+                  </select></td>
+              </tr>
+              <tr>
+                <th scope="row">SOBOTA</th>
+                <td><select id="śniadanie" name="śniadanie">
+                    <option value="#">Hotdog z żabki</option>
+                    <option value="#">Kurczak</option>
+                    <option value="#">Chrupki</option>
+                    <option value="#">Budyń</option>
+                  </select></td>
+                <td><select id="drugie-śniadanie" name="drugie-śniadanie">
+                    <option value="#">Hotdog z żabki</option>
+                    <option value="#">Kurczak</option>
+                    <option value="#">Chrupki</option>
+                    <option value="#">Budyń</option>
+                  </select></td>
+                <td><select id="zupa" name="zupa">
+                    <option value="#">Hotdog z żabki</option>
+                    <option value="#">Kurczak</option>
+                    <option value="#">Chrupki</option>
+                    <option value="#">Budyń</option>
+                  </select></td>
+                <td><select id="drugie-danie" name="drugie-danie">
+                    <option value="#">Hotdog z żabki</option>
+                    <option value="#">Kurczak</option>
+                    <option value="#">Chrupki</option>
+                    <option value="#">Budyń</option>
+                  </select></td>
+                <td><select id="kolacja" name="kolacja">
+                    <option value="#">Hotdog z żabki</option>
+                    <option value="#">Kurczak</option>
+                    <option value="#">Chrupki</option>
+                    <option value="#">Budyń</option>
+                  </select></td>
+              </tr>
+              <tr>
+                <th scope="row">NIEDZIELA</th>
+                <td><select id="śniadanie" name="śniadanie">
+                    <option value="#">Hotdog z żabki</option>
+                    <option value="#">Kurczak</option>
+                    <option value="#">Chrupki</option>
+                    <option value="#">Budyń</option>
+                  </select></td>
+                <td><select id="drugie-śniadanie" name="drugie-śniadanie">
+                    <option value="#">Hotdog z żabki</option>
+                    <option value="#">Kurczak</option>
+                    <option value="#">Chrupki</option>
+                    <option value="#">Budyń</option>
+                  </select></td>
+                <td><select id="zupa" name="zupa">
+                    <option value="#">Hotdog z żabki</option>
+                    <option value="#">Kurczak</option>
+                    <option value="#">Chrupki</option>
+                    <option value="#">Budyń</option>
+                  </select></td>
+                <td><select id="drugie-danie" name="drugie-danie">
+                    <option value="#">Hotdog z żabki</option>
+                    <option value="#">Kurczak</option>
+                    <option value="#">Chrupki</option>
+                    <option value="#">Budyń</option>
+                  </select></td>
+                <td><select id="kolacja" name="kolacja">
+                    <option value="#">Hotdog z żabki</option>
+                    <option value="#">Kurczak</option>
+                    <option value="#">Chrupki</option>
+                    <option value="#">Budyń</option>
+                  </select></td>
+              </tr>
+            </table>
 
           </form>
         </div>
