@@ -1,0 +1,15 @@
+@mixin mainWindow {
+  background-color: map-get($map: $colors, $key: screen);
+  border: 1px dashed map-get($map: $colors, $key: header);
+  box-sizing: border-box;
+  height: 100%;
+}
+
+@mixin formHeader {
+    
+}
+
+.new-plan-container {
+    @include mainWindow;
+    
+}
