@@ -1,3 +1,8 @@
+@import "../font-awesome/fontawesome";
+@import "../font-awesome/icons";
+@import "../font-awesome/regular";
+@import "../font-awesome/solid";
+
 .add-recipes-section {
   background-color: #fffdf4;
   width: 100%;
@@ -12,12 +17,12 @@
   margin: 0 auto;
 }
 .add-recipes-box {
-  width: 890px;
-  margin: 30px auto 30px auto;
+  width: 95%;
+  margin: 1.89rem auto 1.89rem auto;
 }
 .new-recipes-header {
   color: map_get($colors, button);
-  font-size: 25px;
+  font-size: 1.6rem;
   font-weight: bold;
   text-transform: uppercase;
 }
@@ -29,19 +34,24 @@
   padding: 5px 10px;
   margin-bottom: 5px;
   font-weight: bold;
+  cursor: pointer;
 }
 .recipes-name {
-  font-size: 25px;
-  margin: 10px 50px 40px 12px;
+  font-size: 1.6rem;
+  margin: 0.63rem 3.12rem 2.5rem 0.75rem;
   div {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 15px;
+    margin-bottom: 1rem;
   }
   div textarea {
     resize: none;
-    width: 613px;
+    width: 39rem;
   }
+}
+
+#recipe-name {
+  width: 39.15rem;
 }
 .recipes-details {
   display: flex;
@@ -49,45 +59,42 @@
   justify-content: space-between;
   textarea {
     resize: none;
-    width: 400px;
+    width: 25rem;
     box-sizing: border-box;
-    margin-bottom: 30px;
-    margin-left: 10px;
+    margin-bottom: 1.9rem;
+    margin-left: 0.63rem;
   }
 }
 .instruction-title {
   border-bottom: 2px solid darkgrey;
-  width: 420px;
-  font-size: 25px;
-  margin-bottom: 10px;
+  width: 28rem;
+  font-size: 1.6rem;
+  margin-bottom: 0.63rem;
   text-transform: uppercase;
 }
-.fa-plus-square {
+#ingredients-input {
+  width: 25rem;
+  margin-bottom: 3.75rem;
+  height: 20px;
+}
+.add-btn {
+  position: relative;
+  vertical-align: top;
+  border: none;
+  padding: 0;
+  cursor: pointer;
   font-size: 30px;
   color: green;
-  margin-left: 5px;
-  vertical-align: top;
-}
-#ingredients-input {
-  width: 400px;
-  margin-bottom: 60px;
-  font-family: Open Sans;
-}
-
-
-#recipe-name {
-  width: 615px;
-}
-#add-btn {
-  background-image: ;
+  height: 0;
+  width: 0;
 }
 
 %line-styles {
   margin-left: 10px;
   overflow: auto;
-  width: 400px;
-  height: 180px;
-  line-height: 20px;
+  width: 25rem;
+  height: 11.25rem;
+  line-height: 1.25rem;
 }
 .instruction-list {
   list-style: decimal;
