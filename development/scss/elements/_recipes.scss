@@ -1,0 +1,100 @@
+@import "../font-awesome/fontawesome";
+@import "../font-awesome/icons";
+@import "../font-awesome/regular";
+@import "../font-awesome/solid";
+
+.recipes-content {
+  border: 2px dotted map-get($colors, nav);
+  background-color: map-get($colors, screen);
+  color: map-get($colors, header);
+  width: 100%;
+  padding: 1rem 2rem;
+}
+
+//NAGŁÓWEK
+
+.recipes-header{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2px solid map-get($colors, table);
+  h1{
+    color: map-get($colors, button);
+    font-size: 1.6rem;
+    font-weight: bold;
+  }
+  p:after{
+    @extend %fa-icon;
+    @extend .fas;
+    content: fa-content($fa-var-plus-square);
+    position: relative;
+    color: map-get($colors, success);
+    font-size: 2rem;
+  }
+}
+// NAGŁÓWEK LISTY
+
+.sec-header{
+  display: flex;
+  padding: 1rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-bottom: 1px solid map-get($colors, table);
+  border-top: 1px solid map-get($colors, table);
+  margin: 1rem 1rem 0 1rem;
+  h1, h4{
+    flex: 1;
+  }
+  h2{
+    flex: 2;
+  }
+  h3{
+    flex: 5;
+  }
+}
+// LISTA
+.all-recipes{
+  padding: 0.7rem;
+  font-size: 1rem;
+  margin: 0 1rem;
+}
+.recipes{
+  display: flex;
+  border-bottom: 1px solid #A1A194;
+  margin-bottom: 1rem;
+  .recipes-id{
+    display: flex;
+    flex: 1;
+  }
+  .recipes-action{
+    display: flex;
+    flex: 1;
+  }
+  .recipes-name{
+    display: flex;
+    flex: 2;
+  }
+  .recipes-description{
+    display: flex;
+    flex: 5;
+  }
+  .recipes-action{
+    &:before{
+      @extend %fa-icon;
+      @extend .far;
+      content: fa-content($fa-var-edit);
+      position: relative;
+      color: map-get($colors, warning);
+      font-size: 1.2rem;
+    }
+    &:after{
+      @extend %fa-icon;
+      @extend .fas;
+      content: fa-content($fa-var-trash-alt);
+      position: relative;
+      color: map-get($colors, trash);
+      font-size: 1.2rem;
+    }
+  }
+}
+
