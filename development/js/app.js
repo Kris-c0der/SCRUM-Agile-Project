@@ -124,8 +124,11 @@ formEl.addEventListener('submit', function (element) {
     decriptionInput.value = '';
     olEl.innerHTML = '';
     ulEl.innerHTML = '';
+
   }
 });
+
+
 
 // kliknięcie poza oknem zamyka modal //
 
@@ -133,4 +136,5 @@ window.onclick = function(event) {
   if (event.target == modalEl) {
     modalEl.style.display = "none";
   }
-}
+};
+
