@@ -4,7 +4,7 @@ const inpText = document.querySelector("#value");
 const secForm = document.querySelector(".nav-welcome");
 const mainSect = document.querySelector(".main-section");
 
-if(localStorage.length > 0){
+if(localStorage.savedName != null){
     nameUser.innerText = localStorage.savedName;
     secForm.style.display = "none";
     mainSect.style.display = "block";
