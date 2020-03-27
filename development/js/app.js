@@ -21,7 +21,6 @@ if (localStorage.length > 0) {
   mainSect.style.display = "block";
 }
 // Show modal //
-
 const btnAddRecipie = document.querySelector("#add-reciepes");
 const btnAddPlan = document.querySelector("#add-plan");
 
