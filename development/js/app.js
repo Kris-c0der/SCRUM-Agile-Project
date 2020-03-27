@@ -56,14 +56,16 @@ btnElIns.addEventListener('click',function (e) {
   console.log('click');
   e.preventDefault();
   const textAreaInstValue = document.querySelector('#instruction-input').value;
-  if (textAreaInstValue.length < 150) {
+  if (textAreaInstValue.length < 150 && textAreaInstValue.length >0) {
     const newLi = document.createElement('li');
     olEl.appendChild(newLi);
     newLi.innerText = textAreaInstValue;
     instructionAll.push(textAreaInstValue);
     textAreaInst.value = '';
+  } else if (textAreaInstValue.length === 0) {
+    alert('Wprowadź instrukcję');
   } else {
-    alert('Maksymalna liczba znaków: 150');
+    alert('Maksymalna liczba znaków: 150 - Skróć instrukcję');
   }
 });
 
@@ -80,14 +82,16 @@ btnElIng.addEventListener('click',function (e) {
   console.log('click');
   e.preventDefault();
   const inputIngValue = document.querySelector('#ingredients-input').value;
-  if (inputIngValue.length < 50) {
+  if (inputIngValue.length < 50 && inputIngValue.length >0) {
     const newLi2 = document.createElement('li');
     ulEl.appendChild(newLi2);
     newLi2.innerText = inputIngValue;
     ingrediendsAll.push(inputIngValue);
     inputIng.value ='';
+  } else if (inputIngValue.length === 0) {
+    alert('Wprowadź nazwę składnika');
   } else {
-    alert('Maksymalna liczba znaków: 50');
+    alert('Maksymalna liczba znaków: 50 - Skróć nazwę składnika')
   }
 });
 
@@ -104,15 +108,21 @@ formEl.addEventListener('submit', function (element) {
   console.log('submit');
   let decriptionInputVal = document.querySelector('#recipe-description').value;
   let nameRecipInputVal = document.querySelector('#recipe-name').value;
-  if (decriptionInputVal.length >50 && nameRecipInputVal.length >360){
+  if (decriptionInputVal.length > 50 && nameRecipInputVal.length > 360) {
     element.preventDefault();
     alert('Zbyt duża liczba znaków. Maksymlana liczba znaków dla "Nazwa przepisu": 50, dla "Opis Przepisu": 360.')
   } else {
+    alert('Przepis wprowadzony prawidłowo');
     let recipeList = JSON.parse(localStorage.getItem("recipsList"));
     if (recipeList === null) {
       recipeList = [];
     }
-    recipeList.push({nameRecipe: nameRecipInputVal, description: decriptionInputVal,  instruction: instructionAll, ingrediends: ingrediendsAll});
+    recipeList.push({
+      nameRecipe: nameRecipInputVal,
+      description: decriptionInputVal,
+      instruction: instructionAll,
+      ingrediends: ingrediendsAll
+    });
     localStorage.setItem("recipsList", JSON.stringify(recipeList));
     modalEl.style.display = 'none';
     planEl.style.display = 'none';
@@ -125,6 +135,7 @@ formEl.addEventListener('submit', function (element) {
     olEl.innerHTML = '';
     ulEl.innerHTML = '';
   }
+});
 // kliknięcie poza oknem zamyka modal //
 
 window.onclick = function(event) {
