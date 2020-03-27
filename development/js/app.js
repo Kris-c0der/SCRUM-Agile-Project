@@ -44,11 +44,8 @@ btnAddPlan.addEventListener("click", function() {
 
 ///////////////////*New Recipes - Logic*///////////////////////
 const btnElIns = document.querySelector('.instruction-btn');
-console.log(btnElIns);
 const textAreaInst = document.querySelector('#instruction-input');
-console.log(textAreaInst);
 const olEl = document.querySelector('.instruction-list');
-console.log(olEl);
 let instructionAll = [];
 
 //Event dodanie instrukcji
@@ -60,6 +57,12 @@ btnElIns.addEventListener('click',function (e) {
     const newLi = document.createElement('li');
     olEl.appendChild(newLi);
     newLi.innerText = textAreaInstValue;
+    const lielement = document.querySelector('.instruction-list li');
+    if (lielement !== null) {
+        const NewSpanEl = document.createElement('span');
+        NewSpanEl.classList.add('span-icon');
+        newLi.appendChild(NewSpanEl);
+    }
     instructionAll.push(textAreaInstValue);
     textAreaInst.value = '';
   } else if (textAreaInstValue.length === 0) {
@@ -69,23 +72,26 @@ btnElIns.addEventListener('click',function (e) {
   }
 });
 
+
 //Event dodanie składnika
 const btnElIng = document.querySelector('.ingredients-btn');
-console.log(btnElIng);
 const ulEl = document.querySelector('.ingredients-list');
-console.log(ulEl);
 const inputIng = document.querySelector('#ingredients-input');
-console.log(inputIng);
 let ingrediendsAll = [];
 
 btnElIng.addEventListener('click',function (e) {
-  console.log('click');
   e.preventDefault();
   const inputIngValue = document.querySelector('#ingredients-input').value;
   if (inputIngValue.length < 50 && inputIngValue.length >0) {
     const newLi2 = document.createElement('li');
     ulEl.appendChild(newLi2);
     newLi2.innerText = inputIngValue;
+    const lielement2 = document.querySelector('.ingredients-list li');
+    if (lielement2 !== null) {
+      const NewSpanEl2 = document.createElement('span');
+      NewSpanEl2.classList.add('span-icon');
+      newLi2.appendChild(NewSpanEl2);
+    }
     ingrediendsAll.push(inputIngValue);
     inputIng.value ='';
   } else if (inputIngValue.length === 0) {
@@ -97,15 +103,11 @@ btnElIng.addEventListener('click',function (e) {
 
 //Nazwa i opis przepisu
 const nameRecipInput = document.querySelector('#recipe-name');
-console.log(nameRecipInput);
 const decriptionInput = document.querySelector('#recipe-description');
-console.log(decriptionInput);
 const saveBtnEl = document.querySelector('#save-recipes-btn');
-console.log(saveBtnEl);
 const formEl = document.querySelector('#form-add-recipe');
 
 formEl.addEventListener('submit', function (element) {
-  console.log('submit');
   let decriptionInputVal = document.querySelector('#recipe-description').value;
   let nameRecipInputVal = document.querySelector('#recipe-name').value;
   if (decriptionInputVal.length > 50 && nameRecipInputVal.length > 360) {

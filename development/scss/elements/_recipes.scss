@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Charmonman');
 @import "../font-awesome/fontawesome";
 @import "../font-awesome/icons";
 @import "../font-awesome/regular";
@@ -100,6 +101,8 @@
   width: 25rem;
   height: 11.25rem;
   line-height: 1.25rem;
+  font-size: 1rem;
+  color: black;
 }
 .instruction-list {
   list-style: decimal;
@@ -110,4 +113,29 @@
   list-style: disc;
   @extend %line-styles;
   list-style-position: inside;
+}
+
+.instruction-list li, .ingredients-list li {
+  &:after {
+    @extend %fa-icon;
+    @extend .fas;
+    content: fa-content($fa-var-trash-alt);
+    position: relative;
+    color: map-get($colors, trash);
+    font-size: 1rem;
+    cursor: pointer;
+  }
+}
+.span-icon{
+  &:after {
+    @extend %fa-icon;
+    @extend .far;
+    content: fa-content($fa-var-edit);
+    position: relative;
+    color: map-get($colors, warning);
+    font-size: 1rem;
+    cursor: pointer;
+    padding-right: 0.5rem;
+    margin-left: 0.5rem;
+  }
 }
