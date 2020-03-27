@@ -33,7 +33,7 @@
 }
 
 .new-plan-container {
-  // display: none;
+  display: none;
   @include mainWindow;
   #new-schedule-form {
     font-size: 2rem;
