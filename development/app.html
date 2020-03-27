@@ -42,7 +42,7 @@
             dla Ciebie naszą aplikację :)
           </p>
         </section>
-        <!-- <section class="main-section">
+        <section class="main-section">
           <div class="upper-wrapper">
             <div class="widgets-wrapper">
               <div id="add-reciepes" class="box">
@@ -163,7 +163,7 @@
               </button>
             </div>
           </div>
-        </section> -->
+        </section>
         <div class="new-plan-container">
           <form id="new-schedule-form">
 
@@ -431,8 +431,49 @@
                   </select></td>
               </tr>
             </table>
-
           </form>
+        </section>
+        <div class="modal-window">
+          <section class="add-recipes-section">
+            <form class="add-recipes-box" id="form-add-recipe">
+              <header class="add-recipes-header">
+                <p class="new-recipes-header">Nowy przepis</p>
+                <input
+                  id="save-recipes-btn"
+                  type="submit"
+                  value="Zapisz i zamknij"
+                />
+              </header>
+              <div class="recipes-name">
+                <div>
+                  <label class="reciepies-label">Nazwa przepisu</label
+                  ><input type="text" id="recipe-name" />
+                </div>
+                <div>
+                  <label class="reciepies-label">Opis przepisu</label>
+                  <textarea rows="3" id="recipe-description"></textarea>
+                </div>
+              </div>
+              <div class="recipes-details">
+                <div class="instructions-box">
+                  <p class="instruction-title">Instrukcje</p>
+                  <textarea id="instruction-input" rows="3"></textarea>
+                  <button class="add-btn instruction-btn">
+                    <i class="fas fa-plus-square"></i>
+                  </button>
+                  <ol class="instruction-list"></ol>
+                </div>
+                <div class="ingredients">
+                  <p class="instruction-title">Składniki</p>
+                  <input type="text" id="ingredients-input" />
+                  <button class="add-btn ingredients-btn">
+                    <i class="fas fa-plus-square"></i>
+                  </button>
+                  <ul class="ingredients-list"></ul>
+                </div>
+              </div>
+            </form>
+          </section>
         </div>
       </div>
       </section>
