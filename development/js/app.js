@@ -125,8 +125,6 @@ formEl.addEventListener('submit', function (element) {
     olEl.innerHTML = '';
     ulEl.innerHTML = '';
   }
-});
-
 // kliknięcie poza oknem zamyka modal //
 
 window.onclick = function(event) {
