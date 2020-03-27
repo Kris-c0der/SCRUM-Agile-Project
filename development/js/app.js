@@ -113,7 +113,7 @@ formEl.addEventListener('submit', function (element) {
     if (recipeList === null) {
       recipeList = [];
     }
-    recipeList.push({description: decriptionInputVal, nameRecipe: nameRecipInputVal, instruction: instructionAll, ingrediends: ingrediendsAll});
+    recipeList.push({nameRecipe: nameRecipInputVal, description: decriptionInputVal,  instruction: instructionAll, ingrediends: ingrediendsAll});
     localStorage.setItem("recipsList", JSON.stringify(recipeList));
     modalEl.style.display = 'none';
     planEl.style.display = 'none';
@@ -127,6 +127,3 @@ formEl.addEventListener('submit', function (element) {
     ulEl.innerHTML = '';
   }
 });
-
-
-
