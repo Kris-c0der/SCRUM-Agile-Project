@@ -41,3 +41,12 @@ btnAddPlan.addEventListener("click", function() {
   // dodać element który będzie ustawiał display block dla elementu plan //
   console.log("click");
 });
+
+
+// kliknięcie poza oknem zamyka modal //
+
+window.onclick = function(event) {
+  if (event.target == modalEl) {
+    modalEl.style.display = "none";
+  }
+}
