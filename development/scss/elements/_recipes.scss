@@ -115,7 +115,7 @@
   list-style-position: inside;
 }
 
-.instruction-list li, .ingredients-list li {
+.span-delete-icon {
   &:after {
     @extend %fa-icon;
     @extend .fas;

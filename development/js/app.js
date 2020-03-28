@@ -50,18 +50,25 @@ let instructionAll = [];
 
 //Event dodanie instrukcji
 btnElIns.addEventListener('click',function (e) {
-  console.log('click');
   e.preventDefault();
   const textAreaInstValue = document.querySelector('#instruction-input').value;
   if (textAreaInstValue.length < 150 && textAreaInstValue.length >0) {
     const newLi = document.createElement('li');
+    newLi.classList.add('liIconsEl');
     olEl.appendChild(newLi);
     newLi.innerText = textAreaInstValue;
     const lielement = document.querySelector('.instruction-list li');
     if (lielement !== null) {
-        const NewSpanEl = document.createElement('span');
-        NewSpanEl.classList.add('span-icon');
-        newLi.appendChild(NewSpanEl);
+      const NewSpanEl = document.createElement('span');
+      const NewSpanSecEl = document.createElement('span');
+      NewSpanEl.classList.add('span-icon');
+      NewSpanSecEl.classList.add('span-delete-icon');
+      newLi.appendChild(NewSpanEl);
+      newLi.appendChild(NewSpanSecEl);
+      NewSpanSecEl.addEventListener('click',function () {
+        console.log('click');
+        newLi.remove();
+      });
     }
     instructionAll.push(textAreaInstValue);
     textAreaInst.value = '';
@@ -89,8 +96,15 @@ btnElIng.addEventListener('click',function (e) {
     const lielement2 = document.querySelector('.ingredients-list li');
     if (lielement2 !== null) {
       const NewSpanEl2 = document.createElement('span');
+      const NewSpanSecEl2 = document.createElement('span');
       NewSpanEl2.classList.add('span-icon');
+      NewSpanSecEl2.classList.add('span-delete-icon');
       newLi2.appendChild(NewSpanEl2);
+      newLi2.appendChild(NewSpanSecEl2);
+      NewSpanSecEl2.addEventListener('click',function () {
+        console.log('click');
+        newLi2.remove();
+      });
     }
     ingrediendsAll.push(inputIngValue);
     inputIng.value ='';
@@ -100,7 +114,6 @@ btnElIng.addEventListener('click',function (e) {
     alert('Maksymalna liczba znaków: 50 - Skróć nazwę składnika')
   }
 });
-
 //Nazwa i opis przepisu
 const nameRecipInput = document.querySelector('#recipe-name');
 const decriptionInput = document.querySelector('#recipe-description');
@@ -110,10 +123,16 @@ const formEl = document.querySelector('#form-add-recipe');
 formEl.addEventListener('submit', function (element) {
   let decriptionInputVal = document.querySelector('#recipe-description').value;
   let nameRecipInputVal = document.querySelector('#recipe-name').value;
-  if (decriptionInputVal.length > 50 && nameRecipInputVal.length > 360) {
+  if (nameRecipInputVal.length > 50 ) {
     element.preventDefault();
-    alert('Zbyt duża liczba znaków. Maksymlana liczba znaków dla "Nazwa przepisu": 50, dla "Opis Przepisu": 360.')
-  } else {
+    alert('Zbyt duża liczba znaków. Maksymlana liczba znaków dla "Nazwa przepisu": 50')
+  }else if (nameRecipInputVal.length === 0) {
+    alert('Nazwa przepisu musi zostać uzupełniona');
+  }else if (decriptionInputVal.length === 0) {
+    alert('Opis przepisu musi zostać uzupełniony');
+  }else if (decriptionInputVal.length >360) {
+    alert('Zbyt duża liczba znaków. Maksymlana liczba znaków dla "Opis przepisu": 360')
+  }else {
     alert('Przepis wprowadzony prawidłowo');
     let recipeList = JSON.parse(localStorage.getItem("recipsList"));
     if (recipeList === null) {
