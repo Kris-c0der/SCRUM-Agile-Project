@@ -1,0 +1,120 @@
+@mixin mainWindow {
+  background-color: map-get($map: $colors, $key: screen);
+  border: 1px dashed map-get($map: $colors, $key: header);
+  box-sizing: border-box;
+  padding: 35px;
+  margin: 20px 30px;
+}
+
+@mixin formHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid;
+  border-color: lightgrey;
+  padding-bottom: 5px;
+  color: map-get($map: $colors, $key: button);
+  font-weight: bold;
+}
+
+@mixin submitButton {
+  background-color: #ff6600;
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+  border: none;
+  font-size: 1.5rem;
+  padding: 5px 10px;
+}
+
+.justify-fix {
+  display: flex;
+  justify-content: center;
+}
+
+.new-plan-container {
+  display: none;
+  @include mainWindow;
+  #new-schedule-form {
+    font-size: 2rem;
+    color: map-get($map: $colors, $key: nav);
+    .form-header {
+      @include formHeader;
+      h2 {
+        font-size: 2rem;
+      }
+      button {
+        @include submitButton;
+      }
+    }
+    label {
+      display: inline-block;
+      width: 250px;
+      padding: 20px 10px;
+    }
+    input[type='text'] {
+      width: 75%;
+      padding: 5px;
+      &::placeholder {
+        font-family: $main-font;
+      }
+    }
+    input[type='number'] {
+      width: 30px;
+      height: 30px;
+      padding: 1px;
+      text-align: center;
+    }
+    #plan-description-box {
+      display: flex;
+      align-items: baseline;
+      #description {
+        &::placeholder {
+          font-family: $main-font;
+        }
+      }
+      textarea {
+        width: 75%;
+        padding: 5px;
+        margin-left: 9px;
+        resize: none;
+      }
+    }
+  }
+}
+
+#new-plan-table {
+  margin-top: 15px;
+  font-size: 1.4rem;
+  th {
+    vertical-align: middle;
+    width: 200px;
+    line-height: 2rem;
+    font-weight: bold;
+    text-align: center;
+    padding: 5px 20px;
+    &[scope='col'] {
+      border-top: 1px solid lightgrey;
+      font-size: 1.7rem;
+    }
+    &[scope='row'] {
+      border-top: 1px solid lightgrey;
+      font-size: 1.4rem;
+      padding-right: 30px;
+      padding-left: 0;
+    }
+  }
+  td {
+    text-align: center;
+    padding: 8px 0px 8px 0px;
+  }
+  select {
+    padding: 2px 2px;
+    color: #666666;
+    border: 1px solid #c8c8c8;
+    border-radius: 5px;
+    border-style: solid;
+    font-family: $main-font;
+    font-size: 1.1rem;
+  }
+}
