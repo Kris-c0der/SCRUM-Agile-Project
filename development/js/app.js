@@ -135,13 +135,20 @@ formEl.addEventListener('submit', function (element) {
   let nameRecipInputVal = document.querySelector('#recipe-name').value;
   if (nameRecipInputVal.length > 50 ) {
     element.preventDefault();
-    alert('Zbyt duża liczba znaków. Maksymlana liczba znaków dla "Nazwa przepisu": 50')
+    alert('Zbyt duża liczba znaków. Maksymlana liczba znaków dla "Nazwa przepisu": 50');
+    return false;
   }else if (nameRecipInputVal.length === 0) {
+    element.preventDefault();
     alert('Nazwa przepisu musi zostać uzupełniona');
+    return false;
   }else if (decriptionInputVal.length === 0) {
+    element.preventDefault();
     alert('Opis przepisu musi zostać uzupełniony');
+    return false;
   }else if (decriptionInputVal.length >360) {
-    alert('Zbyt duża liczba znaków. Maksymlana liczba znaków dla "Opis przepisu": 360')
+    element.preventDefault();
+    alert('Zbyt duża liczba znaków. Maksymlana liczba znaków dla "Opis przepisu": 360');
+    return false;
   }else {
     alert('Przepis wprowadzony prawidłowo');
     let recipeList = JSON.parse(localStorage.getItem("recipsList"));

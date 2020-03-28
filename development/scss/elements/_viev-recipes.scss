@@ -97,8 +97,9 @@
     display: flex;
     flex: 5;
   }
-  .recipes-action{
-    &:before{
+  //zmienione stylowanie DK
+  .edit-icon-span {
+    &:after {
       @extend %fa-icon;
       @extend .far;
       content: fa-content($fa-var-edit);
@@ -108,7 +109,10 @@
       cursor: pointer;
       padding-right: 1rem;
     }
-    &:after{
+  }
+
+  .delete-icon-span {
+    &:after {
       @extend %fa-icon;
       @extend .fas;
       content: fa-content($fa-var-trash-alt);
@@ -118,6 +122,7 @@
       cursor: pointer;
     }
   }
+
 }
 // MODAL WINDOW
 
