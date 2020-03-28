@@ -195,7 +195,7 @@ select.forEach(i => {
 createPlanForm.addEventListener("submit", function(e) {
   const namePlanInput = document.querySelector("#plan-name");
   const decriptionPlanInput = document.querySelector("#description");
-  let weekNumberVal = document.querySelector("#week-number").value;
+  let weekNumberVal = document.querySelector("#week-number-modal").value;
 
   let namePlanInputVal = document.querySelector("#plan-name").value;
   let decriptionPlanInputVal = document.querySelector("#description").value;
@@ -243,6 +243,7 @@ createPlanForm.addEventListener("submit", function(e) {
       sundayElList
     );
 
+    
     /* pobieranie zaznaczonych wartości z inputów select i dodawanie ich do tablicy */
 
     const planWeek = [];
@@ -327,4 +328,6 @@ Date.prototype.getWeek = function() {
     )
   );
 };
+
+
 
