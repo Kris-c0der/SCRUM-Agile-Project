@@ -206,6 +206,139 @@
               </div>
             </form>
           </section>
+          <section class="new-plan-container">
+            <form id="new-schedule-form">
+
+              <div class="form-header">
+                <h2>NOWY PLAN</h2>
+                <button type="Submit" form="new-schedule-form">Zapisz i
+                  zamknij</button>
+              </div>
+
+              <div>
+                <label for="plan-name">Nazwa planu</label>
+                <input type="text" id="plan-name"
+                  placeholder="Tutaj wpisz nazwę planu">
+              </div>
+
+              <div id="plan-description-box">
+                <label for="description">Opis planu</label>
+                <textarea id="description" rows="10"
+                  placeholder="Tutaj umieść opis planu"></textarea>
+              </div>
+
+              <div>
+                <label for="week-number">Numer tygodnia</label>
+                <input type="number" id="week-number">
+              </div>
+
+              <table id="new-plan-table">
+
+                <tr id="table-col-header">
+                  <th></th>
+                  <th scope="col">ŚNIADANIE</th>
+                  <th scope="col">DRUGIE ŚNIADANIE</th>
+                  <th scope="col">ZUPA</th>
+                  <th scope="col">DRUGIE DANIE</th>
+                  <th scope="col">KOLACJA</th>
+                </tr>
+
+                <tr>
+                  <th scope="row">PONIEDZIAŁEK</th>
+                  <td><select class="monday-select plan-select" name="#">
+                    </select></td>
+                  <td><select class="monday-select plan-select" name="#">
+                    </select></td>
+                  <td><select class="monday-select plan-select" name="#">
+                    </select></td>
+                  <td><select class="monday-select plan-select" name="#">
+                    </select></td>
+                  <td><select class="monday-select plan-select" name="#">
+                    </select></td>
+                </tr>
+
+                <tr>
+                  <th scope="row">WTOREK</th>
+                  <td><select class="tuesday-select plan-select" name="#">
+                    </select></td>
+                  <td><select class="tuesday-select plan-select" name="#">
+                    </select></td>
+                  <td><select class="tuesday-select plan-select" name="#">
+                    </select></td>
+                  <td><select class="tuesday-select plan-select" name="#">
+                    </select></td>
+                  <td><select class="tuesday-select plan-select" name="#">
+                    </select></td>
+                </tr>
+
+                <tr>
+                  <th scope="row">ŚRODA</th>
+                  <td><select class="wednesday-select plan-select" name="#">
+                    </select></td>
+                  <td><select class="wednesday-select plan-select" name="#">
+                    </select></td>
+                  <td><select class="wednesday-select plan-select" name="#">
+                    </select></td>
+                  <td><select class="wednesday-select plan-select" name="#">
+                    </select></td>
+                  <td><select class="wednesday-select plan-select" name="#">
+                    </select></td>
+                </tr>
+                <tr>
+                  <th scope="row">CZWARTEK</th>
+                  <td><select class="thursday-select plan-select" name="#">
+                    </select></td>
+                  <td><select class="thursday-select plan-select" name="#">
+                    </select></td>
+                  <td><select class="thursday-select plan-select" name="#">
+                    </select></td>
+                  <td><select class="thursday-select plan-select" name="#">
+                    </select></td>
+                  <td><select class="thursday-select plan-select" name="#">
+                    </select></td>
+                </tr>
+                <tr>
+                  <th scope="row">PIĄTEK</th>
+                  <td><select class="friday-select plan-select" name="#">
+                    </select></td>
+                  <td><select class="friday-select plan-select" name="#">
+                    </select></td>
+                  <td><select class="friday-select plan-select" name="#">
+                    </select></td>
+                  <td><select class="friday-select plan-select" name="#">
+                    </select></td>
+                  <td><select class="friday-select plan-select" name="#">
+                    </select></td>
+                </tr>
+                <tr>
+                  <th scope="row">SOBOTA</th>
+                  <td><select class="saturday-select plan-select" name="#">
+                    </select></td>
+                  <td><select class="saturday-select plan-select" name="#">
+                    </select></td>
+                  <td><select class="saturday-select plan-select" name="#">
+                    </select></td>
+                  <td><select class="saturday-select plan-select" name="#">
+                    </select></td>
+                  <td><select class="saturday-select plan-select" name="#">
+                    </select></td>
+                </tr>
+                <tr>
+                  <th scope="row">NIEDZIELA</th>
+                  <td><select class="sunday-select plan-select" name="#">
+                    </select></td>
+                  <td><select class="sunday-select plan-select" name="#">
+                    </select></td>
+                  <td><select class="sunday-select plan-select" name="#">
+                    </select></td>
+                  <td><select class="sunday-select plan-select" name="#">
+                    </select></td>
+                  <td><select class="sunday-select plan-select" name="#">
+                    </select></td>
+                </tr>
+              </table>
+            </form>
+          </section>
         </div>
       </div>
     </section>
