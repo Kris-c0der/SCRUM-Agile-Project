@@ -330,4 +330,11 @@ Date.prototype.getWeek = function() {
 };
 
 
+const scheduleWeekNumber = document.getElementById('week-number');
+const currentWeek = currentDate.getWeek();
+
+
+
+
+
 

@@ -31,6 +31,6 @@ for (let i = 0; i < planTab.length; i++) {
     newDiv.appendChild(pId).innerText = i + 1;
     newDiv.appendChild(pName).innerText = planTab[i].namePlan;
     newDiv.appendChild(pDesc).innerText = planTab[i].descriptionPlan;
-    newDiv.appendChild(pWeek).innerText = planTab[i].planWeek.length;
+    newDiv.appendChild(pWeek).innerText = planTab[i].weekNumber;
     newDiv.appendChild(pAction);
 }
