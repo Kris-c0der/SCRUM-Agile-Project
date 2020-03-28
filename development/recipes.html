@@ -22,13 +22,13 @@
     <div class="navMen">
         <p><a href="app.html">Pulpit</a></p>
         <p><a class="active" href="recipes.html">Przepisy</a></p>
-        <p><a href="#">Plany</a></p>
+        <p><a href="schedules.html">Plany</a></p>
     </div>
     <div class="appBase">
         <section class="recipes-content">
             <div class="recipes-header">
                 <h1>LISTA PRZEPISÓW</h1>
-                <p></p>
+                <p class="addRec"></p>
             </div>
             <div class="sec-header">
                 <h1>ID</h1>
@@ -37,17 +37,55 @@
                 <h4>AKCJE</h4>
             </div>
             <div class="all-recipes">
-                <div class="recipes">
-                    <p class="recipes-id"></p>
-                    <p class="recipes-name"></p>
-                    <p class="recipes-description"></p>
-                    <p class="recipes-action"></p>
-                </div>
             </div>
         </section>
     </div>
 </section>
 
-<script src="./js/app.js"></script>
+<!-- MODAL WINDOW -->
+
+<div class="modal-window">
+    <section class="add-recipes-section">
+        <form class="add-recipes-box" id="form-add-recipe">
+            <header class="add-recipes-header">
+                <p class="new-recipes-header">Nowy przepis</p>
+                <input
+                        id="save-recipes-btn"
+                        type="submit"
+                        value="Zapisz i zamknij"
+                />
+            </header>
+            <div class="recipes-name">
+                <div>
+                    <label class="reciepies-label">Nazwa przepisu</label
+                    ><input type="text" id="recipe-name" />
+                </div>
+                <div>
+                    <label class="reciepies-label">Opis przepisu</label>
+                    <textarea rows="3" id="recipe-description"></textarea>
+                </div>
+            </div>
+            <div class="recipes-details">
+                <div class="instructions-box">
+                    <p class="instruction-title">Instrukcje</p>
+                    <textarea id="instruction-input" rows="3"></textarea>
+                    <button class="add-btn instruction-btn">
+                        <i class="fas fa-plus-square"></i>
+                    </button>
+                    <ol class="instruction-list"></ol>
+                </div>
+                <div class="ingredients">
+                    <p class="instruction-title">Składniki</p>
+                    <input type="text" id="ingredients-input" />
+                    <button class="add-btn ingredients-btn">
+                        <i class="fas fa-plus-square"></i>
+                    </button>
+                    <ul class="ingredients-list"></ul>
+                </div>
+            </div>
+        </form>
+    </section>
+
+<script src="./js/recipes.js"></script>
 </body>
 </html>
