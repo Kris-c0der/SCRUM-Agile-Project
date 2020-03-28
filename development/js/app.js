@@ -4,7 +4,7 @@ const inpText = document.querySelector("#value");
 const secForm = document.querySelector(".nav-welcome");
 const mainSect = document.querySelector(".main-section");
 
-if(localStorage.length > 0){
+if(localStorage.savedName != null){
     nameUser.innerText = localStorage.savedName;
     secForm.style.display = "none";
     mainSect.style.display = "block";
@@ -124,8 +124,11 @@ formEl.addEventListener('submit', function (element) {
     decriptionInput.value = '';
     olEl.innerHTML = '';
     ulEl.innerHTML = '';
+
   }
 });
+
+
 
 // kliknięcie poza oknem zamyka modal //
 
@@ -133,4 +136,5 @@ window.onclick = function(event) {
   if (event.target == modalEl) {
     modalEl.style.display = "none";
   }
-}
+};
+
