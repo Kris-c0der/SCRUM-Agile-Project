@@ -278,5 +278,3 @@ createPlanForm.addEventListener("submit", function(e) {
     weekNumberVal = "";
   }
 });
-
-// console.warn("koniec kodu");
