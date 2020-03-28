@@ -278,3 +278,10 @@ createPlanForm.addEventListener("submit", function(e) {
     weekNumberVal = "";
   }
 });
+// WYSWIETLANIE LICZBY PRZEPISOW W APP WIDGET
+
+const numRec = document.querySelector('.num-Rec');
+let numbersOfRecipe = JSON.parse(localStorage.getItem('recipsList'));
+if(localStorage.recipsList != null){
+  numRec.innerText = numbersOfRecipe.length;
+}
