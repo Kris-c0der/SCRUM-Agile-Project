@@ -26,6 +26,18 @@ if(dataTab != null){
 
                 const pAction = document.createElement('p');
                 pAction.className = 'recipes-action';
+                //dodawanie i usuwanie przepisu
+                const span1 = document.createElement('span');
+                span1.classList.add('edit-icon-span');
+                const span2 = document.createElement('span');
+                span2.classList.add('delete-icon-span');
+                pAction.appendChild(span1);
+                pAction.appendChild(span2);
+
+                span2.addEventListener('click',function (e) {
+                        newDiv.remove();
+                        alert('przepis usunięty');
+                });
 
                 allRecipe.appendChild(newDiv);
                 newDiv.appendChild(pId).innerText = i + 1;
@@ -135,13 +147,20 @@ formEl.addEventListener('submit', function (element) {
         let nameRecipInputVal = document.querySelector('#recipe-name').value;
         if (nameRecipInputVal.length > 50 ) {
                 element.preventDefault();
-                alert('Zbyt duża liczba znaków. Maksymlana liczba znaków dla "Nazwa przepisu": 50')
+                alert('Zbyt duża liczba znaków. Maksymlana liczba znaków dla "Nazwa przepisu": 50');
+                return false;
         }else if (nameRecipInputVal.length === 0) {
+                element.preventDefault();
                 alert('Nazwa przepisu musi zostać uzupełniona');
+                return false;
         }else if (decriptionInputVal.length === 0) {
+                element.preventDefault();
                 alert('Opis przepisu musi zostać uzupełniony');
+                return false;
         }else if (decriptionInputVal.length >360) {
-                alert('Zbyt duża liczba znaków. Maksymlana liczba znaków dla "Opis przepisu": 360')
+                element.preventDefault();
+                alert('Zbyt duża liczba znaków. Maksymlana liczba znaków dla "Opis przepisu": 360');
+                return false;
         }else {
                 alert('Przepis wprowadzony prawidłowo');
                 let recipeList = JSON.parse(localStorage.getItem("recipsList"));
@@ -176,5 +195,3 @@ window.onclick = function(event) {
                 modalEl.style.display = "none";
         }
 };
-
-

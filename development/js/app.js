@@ -134,19 +134,22 @@ formEl.addEventListener("submit", function(element) {
   let nameRecipInputVal = document.querySelector("#recipe-name").value;
   if (nameRecipInputVal.length > 50) {
     element.preventDefault();
-    alert(
-      'Zbyt duża liczba znaków. Maksymlana liczba znaków dla "Nazwa przepisu": 50'
-    );
-  } else if (nameRecipInputVal.length === 0) {
-    alert("Nazwa przepisu musi zostać uzupełniona");
-  } else if (decriptionInputVal.length === 0) {
-    alert("Opis przepisu musi zostać uzupełniony");
-  } else if (decriptionInputVal.length > 360) {
-    alert(
-      'Zbyt duża liczba znaków. Maksymlana liczba znaków dla "Opis przepisu": 360'
-    );
-  } else {
-    alert("Przepis wprowadzony prawidłowo");
+    alert('Zbyt duża liczba znaków. Maksymlana liczba znaków dla "Nazwa przepisu": 50');
+    return false;
+  }else if (nameRecipInputVal.length === 0) {
+    element.preventDefault();
+    alert('Nazwa przepisu musi zostać uzupełniona');
+    return false;
+  }else if (decriptionInputVal.length === 0) {
+    element.preventDefault();
+    alert('Opis przepisu musi zostać uzupełniony');
+    return false;
+  }else if (decriptionInputVal.length >360) {
+    element.preventDefault();
+    alert('Zbyt duża liczba znaków. Maksymlana liczba znaków dla "Opis przepisu": 360');
+    return false;
+  }else {
+    alert('Przepis wprowadzony prawidłowo');
     let recipeList = JSON.parse(localStorage.getItem("recipsList"));
     if (recipeList === null) {
       recipeList = [];
@@ -420,7 +423,7 @@ prevBtn.addEventListener("click", function() {
 
       scheduleAllPlans.forEach(object => {
         if (object.idRecipe == currentID - 1) {// znajdź plan pasujący do poprzedniego id.
-          const prePlan = object.planWeek[0]; 
+          const prePlan = object.planWeek[0];
           scheduleWeekNumber.innerText = object.weekNumber;
           let i = 0;
           mondayMeals.forEach(meal => {
@@ -477,7 +480,7 @@ nextBtn.addEventListener("click", function() {
 
       scheduleAllPlans.forEach(object => {
         if (object.idRecipe == currentID + 1) {// znajdź plan pasujący do następnego id.
-          const prePlan = object.planWeek[0]; 
+          const prePlan = object.planWeek[0];
           scheduleWeekNumber.innerText = object.weekNumber;
           let i = 0;
           mondayMeals.forEach(meal => {
