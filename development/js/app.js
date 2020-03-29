@@ -243,7 +243,6 @@ createPlanForm.addEventListener("submit", function(e) {
       sundayElList
     );
 
-    
     /* pobieranie zaznaczonych wartości z inputów select i dodawanie ich do tablicy */
 
     const planWeek = [];
@@ -288,27 +287,6 @@ if (localStorage.recipsList != null) {
 
 // Wyświetlanie planów w ekranie głównym aplikacji.
 
-const months = [
-  "Styczeń",
-  "Luty",
-  "Marzec",
-  "Kwiecień",
-  "Maj",
-  "Czerwiec",
-  "Lipiec",
-  "Sierpień",
-  "Wrzesień",
-  "Październik",
-  "Listopad",
-  "Grudzień"
-];
-
-const currentDate = new Date(); // pełna data
-const currentMonth = currentDate.getMonth() + 1; //miesiąc || +1 ponieważ JS liczy miesiące od 0.
-const currentDay = currentDate.getDate(); //dzień miesiąca
-// console.log(months[currentMonth - 1]); // uzyskanie nazwy miesiąca zamiast liczby || -1 ponieważ pierwszy miesiąc ma indeks 0.
-
-
 // Uzyskanie numeru tygodnia w roku || źródło https://weeknumber.net/how-to/javascript
 Date.prototype.getWeek = function() {
   var date = new Date(this.getTime());
@@ -329,12 +307,62 @@ Date.prototype.getWeek = function() {
   );
 };
 
-
-const scheduleWeekNumber = document.getElementById('week-number');
+const scheduleWeekNumber = document.getElementById("week-number");
+const currentDate = new Date(); // uzyskanie daty.
 const currentWeek = currentDate.getWeek();
+scheduleWeekNumber.innerText = currentWeek; // ustaw tydzien na obecny.
+
+const scheduleAllPlans = JSON.parse(localStorage.getItem("planSchedule"));
+const scheduleWeeklyMeals = scheduleAllPlans[3].planWeek[0][0];
+
+const mondayMeals = document.querySelectorAll("[id*=pn-]"); //zgrupuj wszystkie dania poniedziałkowe w jedną tablicę, poniżej analogicznie.
+const tuesdayMeals = document.querySelectorAll("[id*=wt-]"); 
+const wednesdayMeals = document.querySelectorAll("[id*=sr-]"); 
+const thursdayMeals = document.querySelectorAll("[id*=czw-]"); 
+const fridayMeals = document.querySelectorAll("[id*=pt-]"); 
+const saturdayMeals = document.querySelectorAll("[id*=sb-]"); 
+const sundayMeals = document.querySelectorAll("[id*=ndz-]"); 
 
 
+let i = 0;
+mondayMeals.forEach(meal => {
+  meal.innerText = scheduleWeeklyMeals[i]; //ustaw kolejno poniedziałkowe posiłki, poniżej analogicznie.
+  i++
+});
+
+i = 0;
+tuesdayMeals.forEach(meal => {
+  meal.innerText = scheduleWeeklyMeals[i];
+  i++
+});
+
+i = 0;
+wednesdayMeals.forEach(meal => {
+  meal.innerText = scheduleWeeklyMeals[i];
+  i++
+});
+
+i = 0;
+thursdayMeals.forEach(meal => {
+  meal.innerText = scheduleWeeklyMeals[i];
+  i++
+});
 
 
+i = 0;
+fridayMeals.forEach(meal => {
+  meal.innerText = scheduleWeeklyMeals[i];
+  i++;
+});
 
+i = 0;
+saturdayMeals.forEach(meal => {
+  meal.innerText = scheduleWeeklyMeals[i];
+  i++;
+});
 
+i = 0;
+sundayMeals.forEach(meal => {
+  meal.innerText = scheduleWeeklyMeals[i];
+  i++;
+});
