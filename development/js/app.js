@@ -287,7 +287,7 @@ if (localStorage.recipsList != null) {
 
 // Wyświetlanie planów w ekranie głównym aplikacji.
 
-// Uzyskanie numeru tygodnia w roku || źródło https://weeknumber.net/how-to/javascript
+// funkcja konwertująca datę na numer tygodnia w roku || źródło https://weeknumber.net/how-to/javascript
 Date.prototype.getWeek = function() {
   var date = new Date(this.getTime());
   date.setHours(0, 0, 0, 0);
@@ -307,62 +307,98 @@ Date.prototype.getWeek = function() {
   );
 };
 
+const scheduleAllPlans = JSON.parse(localStorage.getItem("planSchedule"));
+
+weekArr = [];
+if (scheduleAllPlans !== null) {
+  scheduleAllPlans.forEach(plan => {
+    const weekNumber = plan.weekNumber;
+    weekArr.push(parseInt(weekNumber));
+  }); // umieść w tablicy wszystkie numery tygodni, dla których zbudowane są plany.
+}
+
 const scheduleWeekNumber = document.getElementById("week-number");
 const currentDate = new Date(); // uzyskanie daty.
-const currentWeek = currentDate.getWeek();
-scheduleWeekNumber.innerText = currentWeek; // ustaw tydzien na obecny.
+const currentWeek = currentDate.getWeek(); // uzyskanie numeru tygodnia na podstawie daty.
 
-const scheduleAllPlans = JSON.parse(localStorage.getItem("planSchedule"));
-const scheduleWeeklyMeals = scheduleAllPlans[3].planWeek[0][0];
+if (weekArr.length === 0) {
+  const tableTitle = document.getElementById("table-tittle");
+  tableTitle.innerText = "Wygląda na to, że nie masz jeszcze żadnego planu :(";
+}
 
-const mondayMeals = document.querySelectorAll("[id*=pn-]"); //zgrupuj wszystkie dania poniedziałkowe w jedną tablicę, poniżej analogicznie.
-const tuesdayMeals = document.querySelectorAll("[id*=wt-]"); 
-const wednesdayMeals = document.querySelectorAll("[id*=sr-]"); 
-const thursdayMeals = document.querySelectorAll("[id*=czw-]"); 
-const fridayMeals = document.querySelectorAll("[id*=pt-]"); 
-const saturdayMeals = document.querySelectorAll("[id*=sb-]"); 
-const sundayMeals = document.querySelectorAll("[id*=ndz-]"); 
+if (weekArr.indexOf(currentWeek) > -1) {
+  //sprawdź czy instnieje plan stworzony na obecny tydzień.
+  scheduleWeekNumber.innerText = currentWeek;
+}
+//jeśli nie istnieje taki plan, to weź najbliższy plan na kolejny tydzień. Jeśli nie ma planu na kolejny tydzień to weź plan z zeszłego tygodnia.
 
+if ((weekArr, length > 0)) {
+  weekArr.reduce((a, b) => {
+    let aDiff = Math.abs(a - currentWeek);
+    let bDiff = Math.abs(b - currentWeek);
 
-let i = 0;
-mondayMeals.forEach(meal => {
-  meal.innerText = scheduleWeeklyMeals[i]; //ustaw kolejno poniedziałkowe posiłki, poniżej analogicznie.
-  i++
+    if (aDiff == bDiff) {
+      return a > b ? a : b;
+    } else {
+      return bDiff < aDiff ? b : a;
+    }
+  });
+}
+
+//zgrupuj wszystkie dania poniedziałkowe w jedną tablicę, potem analogicznie dla pozostałych dni tygodnia.
+const mondayMeals = document.querySelectorAll("[id*=pn-]");
+const tuesdayMeals = document.querySelectorAll("[id*=wt-]");
+const wednesdayMeals = document.querySelectorAll("[id*=sr-]");
+const thursdayMeals = document.querySelectorAll("[id*=czw-]");
+const fridayMeals = document.querySelectorAll("[id*=pt-]");
+const saturdayMeals = document.querySelectorAll("[id*=sb-]");
+const sundayMeals = document.querySelectorAll("[id*=ndz-]");
+
+scheduleAllPlans.forEach(object => {
+  if (object.weekNumber == currentWeek) {
+    const plan = object.planWeek[0]; //Znajdź ten kontretny plan, który nas interesuje.
+    let i = 0;
+    mondayMeals.forEach(meal => {
+      meal.innerText = plan[0][i]; //ustaw kolejno poniedziałkowe posiłki, poniżej analogicznie.
+      i++;
+    });
+
+    i = 0;
+    tuesdayMeals.forEach(meal => {
+      meal.innerText = plan[1][i];
+      i++;
+    });
+
+    i = 0;
+    wednesdayMeals.forEach(meal => {
+      meal.innerText = plan[2][i];
+      i++;
+    });
+
+    i = 0;
+    thursdayMeals.forEach(meal => {
+      meal.innerText = plan[3][i];
+      i++;
+    });
+
+    i = 0;
+    fridayMeals.forEach(meal => {
+      meal.innerText = plan[4][i];
+      i++;
+    });
+
+    i = 0;
+    saturdayMeals.forEach(meal => {
+      meal.innerText = plan[5][i];
+      i++;
+    });
+
+    i = 0;
+    sundayMeals.forEach(meal => {
+      meal.innerText = plan[6][i];
+      i++;
+    });
+  }
 });
 
-i = 0;
-tuesdayMeals.forEach(meal => {
-  meal.innerText = scheduleWeeklyMeals[i];
-  i++
-});
-
-i = 0;
-wednesdayMeals.forEach(meal => {
-  meal.innerText = scheduleWeeklyMeals[i];
-  i++
-});
-
-i = 0;
-thursdayMeals.forEach(meal => {
-  meal.innerText = scheduleWeeklyMeals[i];
-  i++
-});
-
-
-i = 0;
-fridayMeals.forEach(meal => {
-  meal.innerText = scheduleWeeklyMeals[i];
-  i++;
-});
-
-i = 0;
-saturdayMeals.forEach(meal => {
-  meal.innerText = scheduleWeeklyMeals[i];
-  i++;
-});
-
-i = 0;
-sundayMeals.forEach(meal => {
-  meal.innerText = scheduleWeeklyMeals[i];
-  i++;
-});
+// const scheduleWeeklyMeals = findCorrectPlan(); //Po znalezieniu właściwego planu, uzupełniamy posiłki dla każdego dnia tygodnia;
