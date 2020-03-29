@@ -34,8 +34,9 @@ if(dataTab != null){
                 pAction.appendChild(span1);
                 pAction.appendChild(span2);
 
-                span2.addEventListener('click',function () {
+                span2.addEventListener('click',function (e) {
                         newDiv.remove();
+                        alert('przepis usunięty');
                 });
 
                 allRecipe.appendChild(newDiv);
@@ -194,22 +195,3 @@ window.onclick = function(event) {
                 modalEl.style.display = "none";
         }
 };
-
-//Usuwanie przepisu
-// const deleteBtn = document.querySelectorAll('.delete-icon-span');
-// console.log(deleteBtn);
-// const recipeDivEl = document.querySelector('.recipes');
-// console.log(recipeDivEl);
-// deleteBtn.forEach(function (deleteDiv) {
-//         deleteDiv.addEventListener('click',function () {
-//                 recipeDivEl.remove();
-//
-//         })
-//
-// })
-
-// deleteBtn.addEventListener('click',function () {
-//         console.log('click');
-//         recipeDivEl.remove();
-//
-// });
