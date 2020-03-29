@@ -190,13 +190,12 @@ select.forEach(i => {
   }
 });
 
-
 /*tworzenie nowego planu*/
 
 createPlanForm.addEventListener("submit", function(e) {
   const namePlanInput = document.querySelector("#plan-name");
   const decriptionPlanInput = document.querySelector("#description");
-  let weekNumberVal = document.querySelector("#week-number").value;
+  let weekNumberVal = document.querySelector("#week-number-modal").value;
 
   let namePlanInputVal = document.querySelector("#plan-name").value;
   let decriptionPlanInputVal = document.querySelector("#description").value;
@@ -280,8 +279,249 @@ createPlanForm.addEventListener("submit", function(e) {
 });
 // WYSWIETLANIE LICZBY PRZEPISOW W APP WIDGET
 
-const numRec = document.querySelector('.num-Rec');
-let numbersOfRecipe = JSON.parse(localStorage.getItem('recipsList'));
-if(localStorage.recipsList != null){
+const numRec = document.querySelector(".num-Rec");
+let numbersOfRecipe = JSON.parse(localStorage.getItem("recipsList"));
+if (localStorage.recipsList != null) {
   numRec.innerText = numbersOfRecipe.length;
 }
+
+// Wyświetlanie planów w ekranie głównym aplikacji.
+
+// funkcja konwertująca datę na numer tygodnia w roku || źródło https://weeknumber.net/how-to/javascript
+Date.prototype.getWeek = function() {
+  var date = new Date(this.getTime());
+  date.setHours(0, 0, 0, 0);
+  // Thursday in current week decides the year.
+  date.setDate(date.getDate() + 3 - ((date.getDay() + 6) % 7));
+  // January 4 is always in week 1.
+  var week1 = new Date(date.getFullYear(), 0, 4);
+  // Adjust to Thursday in week 1 and count number of weeks from date to week1.
+  return (
+    1 +
+    Math.round(
+      ((date.getTime() - week1.getTime()) / 86400000 -
+        3 +
+        ((week1.getDay() + 6) % 7)) /
+        7
+    )
+  );
+};
+
+const scheduleAllPlans = JSON.parse(localStorage.getItem("planSchedule"));
+
+weekArr = [];
+if (scheduleAllPlans !== null) {
+  scheduleAllPlans.forEach(plan => {
+    const weekNumber = plan.weekNumber;
+    weekArr.push(parseInt(weekNumber));
+  }); // umieść w tablicy wszystkie numery tygodni, dla których zbudowane są plany.
+}
+
+const scheduleWeekNumber = document.getElementById("week-number");
+const currentDate = new Date(); // uzyskanie daty.
+const currentWeek = currentDate.getWeek(); // uzyskanie numeru tygodnia na podstawie daty.
+
+if (weekArr.length === 0) {
+  const tableTitle = document.getElementById("table-tittle");
+  tableTitle.innerText = "Wygląda na to, że nie masz jeszcze żadnego planu :(";
+}
+
+if (weekArr.indexOf(currentWeek) > -1) {
+  //sprawdź czy instnieje plan stworzony na obecny tydzień.
+  scheduleWeekNumber.innerText = currentWeek;
+}
+
+if (weekArr.length === 1) {
+  //jeśli istnieje tylko jeden plan, użyj go;
+  scheduleWeekNumber.innerText = weekArr[0];
+}
+
+if (weekArr.length > 0) {
+  //jeśli nie istnieje plan na obecny tydzień, to weź najbliższy plan na kolejny tydzień. Jeśli nie ma planu na kolejny tydzień to weź plan z zeszłego tygodnia.
+
+  const closestWeek = weekArr.reduce((a, b) => {
+    let aDiff = Math.abs(a - currentWeek);
+    let bDiff = Math.abs(b - currentWeek);
+
+    if (aDiff == bDiff) {
+      return a > b ? a : b;
+    } else {
+      return bDiff < aDiff ? b : a;
+    }
+  });
+  scheduleWeekNumber.innerText = closestWeek;
+}
+
+//zgrupuj wszystkie dania poniedziałkowe w jedną tablicę, potem analogicznie dla pozostałych dni tygodnia.
+const mondayMeals = document.querySelectorAll("[id*=pn-]");
+const tuesdayMeals = document.querySelectorAll("[id*=wt-]");
+const wednesdayMeals = document.querySelectorAll("[id*=sr-]");
+const thursdayMeals = document.querySelectorAll("[id*=czw-]");
+const fridayMeals = document.querySelectorAll("[id*=pt-]");
+const saturdayMeals = document.querySelectorAll("[id*=sb-]");
+const sundayMeals = document.querySelectorAll("[id*=ndz-]");
+
+scheduleAllPlans.forEach(object => {
+  if (object.weekNumber == scheduleWeekNumber.innerText) {
+    const plan = object.planWeek[0]; //Znajdź ten kontretny plan, który nas interesuje.
+    let i = 0;
+    mondayMeals.forEach(meal => {
+      meal.innerText = plan[0][i]; //ustaw kolejno poniedziałkowe posiłki, poniżej analogicznie.
+      i++;
+    });
+
+    i = 0;
+    tuesdayMeals.forEach(meal => {
+      meal.innerText = plan[1][i];
+      i++;
+    });
+
+    i = 0;
+    wednesdayMeals.forEach(meal => {
+      meal.innerText = plan[2][i];
+      i++;
+    });
+
+    i = 0;
+    thursdayMeals.forEach(meal => {
+      meal.innerText = plan[3][i];
+      i++;
+    });
+
+    i = 0;
+    fridayMeals.forEach(meal => {
+      meal.innerText = plan[4][i];
+      i++;
+    });
+
+    i = 0;
+    saturdayMeals.forEach(meal => {
+      meal.innerText = plan[5][i];
+      i++;
+    });
+
+    i = 0;
+    sundayMeals.forEach(meal => {
+      meal.innerText = plan[6][i];
+      i++;
+    });
+  }
+});
+
+//przesuwanie planów przyciskami next oraz prev
+const prevBtn = document.getElementById("prev-plan-button");
+const nextBtn = document.getElementById("next-plan-button");
+
+prevBtn.addEventListener("click", function() {
+  scheduleAllPlans.forEach(object => {
+    if (object.weekNumber == scheduleWeekNumber.innerText) {
+      const currentID = object.idRecipe;
+      console.log(currentID); //znajdź obecne id.
+
+      scheduleAllPlans.forEach(object => {
+        if (object.idRecipe == currentID - 1) {// znajdź plan pasujący do poprzedniego id.
+          const prePlan = object.planWeek[0]; 
+          scheduleWeekNumber.innerText = object.weekNumber;
+          let i = 0;
+          mondayMeals.forEach(meal => {
+            meal.innerText = prePlan[0][i];
+            i++;
+          });
+
+          i = 0;
+          tuesdayMeals.forEach(meal => {
+            meal.innerText = prePlan[1][i];
+            i++;
+          });
+
+          i = 0;
+          wednesdayMeals.forEach(meal => {
+            meal.innerText = prePlan[2][i];
+            i++;
+          });
+
+          i = 0;
+          thursdayMeals.forEach(meal => {
+            meal.innerText = prePlan[3][i];
+            i++;
+          });
+
+          i = 0;
+          fridayMeals.forEach(meal => {
+            meal.innerText = prePlan[4][i];
+            i++;
+          });
+
+          i = 0;
+          saturdayMeals.forEach(meal => {
+            meal.innerText = prePlan[5][i];
+            i++;
+          });
+
+          i = 0;
+          sundayMeals.forEach(meal => {
+            meal.innerText = prePlan[6][i];
+            i++;
+          });
+        }
+      });
+    }
+  });
+});
+
+nextBtn.addEventListener("click", function() {
+  scheduleAllPlans.forEach(object => {
+    if (object.weekNumber == scheduleWeekNumber.innerText) {
+      const currentID = object.idRecipe;
+      console.log(currentID); //znajdź obecne id.
+
+      scheduleAllPlans.forEach(object => {
+        if (object.idRecipe == currentID + 1) {// znajdź plan pasujący do następnego id.
+          const prePlan = object.planWeek[0]; 
+          scheduleWeekNumber.innerText = object.weekNumber;
+          let i = 0;
+          mondayMeals.forEach(meal => {
+            meal.innerText = prePlan[0][i];
+            i++;
+          });
+
+          i = 0;
+          tuesdayMeals.forEach(meal => {
+            meal.innerText = prePlan[1][i];
+            i++;
+          });
+
+          i = 0;
+          wednesdayMeals.forEach(meal => {
+            meal.innerText = prePlan[2][i];
+            i++;
+          });
+
+          i = 0;
+          thursdayMeals.forEach(meal => {
+            meal.innerText = prePlan[3][i];
+            i++;
+          });
+
+          i = 0;
+          fridayMeals.forEach(meal => {
+            meal.innerText = prePlan[4][i];
+            i++;
+          });
+
+          i = 0;
+          saturdayMeals.forEach(meal => {
+            meal.innerText = prePlan[5][i];
+            i++;
+          });
+
+          i = 0;
+          sundayMeals.forEach(meal => {
+            meal.innerText = prePlan[6][i];
+            i++;
+          });
+        }
+      });
+    }
+  });
+});
