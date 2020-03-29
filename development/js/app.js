@@ -407,3 +407,121 @@ scheduleAllPlans.forEach(object => {
     });
   }
 });
+
+//przesuwanie planów przyciskami next oraz prev
+const prevBtn = document.getElementById("prev-plan-button");
+const nextBtn = document.getElementById("next-plan-button");
+
+prevBtn.addEventListener("click", function() {
+  scheduleAllPlans.forEach(object => {
+    if (object.weekNumber == scheduleWeekNumber.innerText) {
+      const currentID = object.idRecipe;
+      console.log(currentID); //znajdź obecne id.
+
+      scheduleAllPlans.forEach(object => {
+        if (object.idRecipe == currentID - 1) {// znajdź plan pasujący do poprzedniego id.
+          const prePlan = object.planWeek[0]; 
+          scheduleWeekNumber.innerText = object.weekNumber;
+          let i = 0;
+          mondayMeals.forEach(meal => {
+            meal.innerText = prePlan[0][i];
+            i++;
+          });
+
+          i = 0;
+          tuesdayMeals.forEach(meal => {
+            meal.innerText = prePlan[1][i];
+            i++;
+          });
+
+          i = 0;
+          wednesdayMeals.forEach(meal => {
+            meal.innerText = prePlan[2][i];
+            i++;
+          });
+
+          i = 0;
+          thursdayMeals.forEach(meal => {
+            meal.innerText = prePlan[3][i];
+            i++;
+          });
+
+          i = 0;
+          fridayMeals.forEach(meal => {
+            meal.innerText = prePlan[4][i];
+            i++;
+          });
+
+          i = 0;
+          saturdayMeals.forEach(meal => {
+            meal.innerText = prePlan[5][i];
+            i++;
+          });
+
+          i = 0;
+          sundayMeals.forEach(meal => {
+            meal.innerText = prePlan[6][i];
+            i++;
+          });
+        }
+      });
+    }
+  });
+});
+
+nextBtn.addEventListener("click", function() {
+  scheduleAllPlans.forEach(object => {
+    if (object.weekNumber == scheduleWeekNumber.innerText) {
+      const currentID = object.idRecipe;
+      console.log(currentID); //znajdź obecne id.
+
+      scheduleAllPlans.forEach(object => {
+        if (object.idRecipe == currentID + 1) {// znajdź plan pasujący do następnego id.
+          const prePlan = object.planWeek[0]; 
+          scheduleWeekNumber.innerText = object.weekNumber;
+          let i = 0;
+          mondayMeals.forEach(meal => {
+            meal.innerText = prePlan[0][i];
+            i++;
+          });
+
+          i = 0;
+          tuesdayMeals.forEach(meal => {
+            meal.innerText = prePlan[1][i];
+            i++;
+          });
+
+          i = 0;
+          wednesdayMeals.forEach(meal => {
+            meal.innerText = prePlan[2][i];
+            i++;
+          });
+
+          i = 0;
+          thursdayMeals.forEach(meal => {
+            meal.innerText = prePlan[3][i];
+            i++;
+          });
+
+          i = 0;
+          fridayMeals.forEach(meal => {
+            meal.innerText = prePlan[4][i];
+            i++;
+          });
+
+          i = 0;
+          saturdayMeals.forEach(meal => {
+            meal.innerText = prePlan[5][i];
+            i++;
+          });
+
+          i = 0;
+          sundayMeals.forEach(meal => {
+            meal.innerText = prePlan[6][i];
+            i++;
+          });
+        }
+      });
+    }
+  });
+});
